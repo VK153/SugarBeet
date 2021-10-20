@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     public float selfHeal = 0;
     float healTime = 2;
 
-    public float toxDelay = 0.5f; //독장판 관련
+    public float toxDelay = 0.5f; //독장판
     public float toxTime = 0f;
     public float toxDamage, toxDamageP = 1;
 
