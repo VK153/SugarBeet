@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d53c89743ac0a468dc9ba0d1db9ab2, type: 3}
+  m_Name: "\uC124\uD0D5"
+  m_EditorClassIdentifier: 
+  itemName: Suger
+  itemType: 2
+  itemImage: {fileID: 21300000, guid: 7f28896e546ba1844b276f5de9ae2aea, type: 3}
+  itemPreFab: {fileID: 3231607176007564113, guid: 9588f090a98b26e47b50e6a40d34a6c7,
+    type: 3}
+  weaponType: 

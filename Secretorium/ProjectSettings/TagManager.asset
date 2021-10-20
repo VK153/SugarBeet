@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Floor
+  - Wall
+  - Bullet
+  - Enemy
+  - PlayerHit
+  - Follow
+  - GunFollow
+  - Item
+  - TFloor
+  - EFloor
+  - EJumpTile
+  - EnemyTFloor
+  - FloorEnemy
+  - BaseEnemy
+  - ItemUI
+  - Tox
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - BackGround
+  - Player
+  - Bullet
+  - Enemy
+  - Follow
+  - bulle
+  - Item
+  - EJumpTile
+  - EnemyTFloor
+  - TFloor
+  - FloorEnemy
+  - Tox
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
