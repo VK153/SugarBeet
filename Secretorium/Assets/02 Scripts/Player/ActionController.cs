@@ -16,6 +16,7 @@ public class ActionController : MonoBehaviour
     public bool eat = false;
     public bool getItem = false;
 
+
     Player pl;
 
     private void Start()
@@ -86,6 +87,14 @@ public class ActionController : MonoBehaviour
                     }
                     GetComponentInChildren<WeaponFire>().gDmg = true;
                     slots[1].SetColor(0.3f);
+                }
+                else if(slots[1].item.itemName == ("HappyGrenade"))
+                {
+                    HasActiveItem = false;
+                    pl.HG = 1;
+                    pl.isAvoid = true;
+                    pl.gameObject.GetComponentInChildren<WeaponFire>().canSoot = true;
+                    slots[1].SetSlotCount(-1);
                 }
             }
         }

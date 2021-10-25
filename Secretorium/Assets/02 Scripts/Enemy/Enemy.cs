@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
 
 
     public float dmg = 5, hp = 10, exp = 10;
-    float maxHp;
+    public float maxHp;
     Player ps;
     GameObject holster;
     WeaponFire weaponFire;

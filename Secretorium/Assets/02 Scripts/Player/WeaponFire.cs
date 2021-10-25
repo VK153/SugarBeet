@@ -5,7 +5,9 @@ using UnityEngine;
 public class WeaponFire : MonoBehaviour
 {
     public GameObject bulletFactory;
+    public GameObject hg;
     public GameObject shootPos;
+    public bool canSoot = false;
     public float bSpeed = 10;
 
 
@@ -50,6 +52,11 @@ public class WeaponFire : MonoBehaviour
                 time = 0f;
                 Shoot();
             }
+            if(Input.GetMouseButton(1) && canSoot == true)
+            {
+                HGSoot();
+                canSoot = false;
+            }
         }
     }
     private void Shoot()
@@ -59,6 +66,13 @@ public class WeaponFire : MonoBehaviour
         bullet.transform.rotation = holster.transform.rotation;
         wSound.clip = fire;
         wSound.Play();
+    }
+
+    private void HGSoot()
+    {
+        GameObject bomb = Instantiate(hg);
+        bomb.transform.position = shootPos.transform.position;
+        bomb.transform.rotation = holster.transform.rotation;
     }
 
     public void Dmg()

@@ -8,6 +8,10 @@ public class Player : MonoBehaviour
     public float maxHp=100;
     public float hp;
     public float avoidPoint = 30;
+    public float HG = -1;
+    float avoid;
+    public bool isAvoid = false;
+
     public float dmg;
     float hpUp = 1.01f;
     public float shield = 0;
@@ -83,6 +87,7 @@ public class Player : MonoBehaviour
     {
         //Debug.Log(aFCoolTime);
         AutoFire();
+        HappyG();
 
         StatText();
         scrapText.text = "스크랩 : " + scrap + "\n열쇠 : " + key;
@@ -316,6 +321,25 @@ public class Player : MonoBehaviour
                 aFCoolTime = 0;
                 return;
             }
+        }
+    }
+
+    public void HappyG()
+    {
+        if(isAvoid == true)
+        {
+            avoid = avoidPoint;
+            isAvoid = false;
+        }
+        if(HG > 0)
+        {
+            HG -= Time.deltaTime;
+            avoidPoint = 100;
+        }
+        else
+        {
+            HG = -1;
+            avoidPoint = avoid;
         }
     }
 

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d53c89743ac0a468dc9ba0d1db9ab2, type: 3}
+  m_Name: "\uD589\uBCF5\uC218\uB958\uD0C4"
+  m_EditorClassIdentifier: 
+  itemName: HappyGrenade
+  itemType: 1
+  itemImage: {fileID: 21300000, guid: ea58250368db21e4187ca54aded77610, type: 3}
+  itemPreFab: {fileID: 2663028416171226002, guid: d82bb490d3868ff4e916e32bb4589a39,
+    type: 3}
+  weaponType: 
