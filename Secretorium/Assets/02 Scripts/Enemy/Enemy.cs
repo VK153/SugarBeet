@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     // Warning!!!!!!!!!!!! 이 스크립트는 플레이어 스크립트의 정상작동을 확인하는 용도의 임시 스크립트입니다!!!!  Warning!!!!!!!!!!!!
 
 
+
     public float dmg = 5, hp = 10, exp = 10;
     public float maxHp;
     Player ps;
@@ -50,6 +51,12 @@ public class Enemy : MonoBehaviour
     BoxCollider2D box;
 
     float downTime = 2, alfa;
+
+
+    public float lifeTime = 0f, setLifeTime = 15f;//생명유지시간과 경과시간
+    public bool inBox;//플레이어 주변에 있는지 확인
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,6 +87,7 @@ public class Enemy : MonoBehaviour
         {
             jumpForce = 13;
         }
+        inBox = false;//플레이어 주변 범위내 없음으로 시작
     }
 
     // Update is called once per frame
@@ -102,6 +110,16 @@ public class Enemy : MonoBehaviour
         Jump();
         DownJump();
         //Debug.Log(canJump);
+
+        if (!inBox && lifeTime <= setLifeTime)
+        {
+            lifeTime += Time.deltaTime;
+        }
+        else if(lifeTime > setLifeTime) 
+        {
+            Destroy(this.gameObject);
+            Debug.Log("lifeTimeOut");
+        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -114,6 +132,12 @@ public class Enemy : MonoBehaviour
             weaponFire.Dmg();
             TakeDamage(weaponFire.dmg);
             Destroy(other.gameObject);
+        }
+
+        if (other.CompareTag("MobAble"))//플레이어 주변에 있을경우 생명시간 초기화
+        {
+            lifeTime = 0f;
+            inBox = true;
         }
         //if (other.CompareTag("EJumpTile"))
         //{
@@ -180,6 +204,15 @@ public class Enemy : MonoBehaviour
                 canJump = false;
             }
             //Debug.Log(canJump);
+        }
+
+
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("MobAble"))
+        {
+            inBox = false;
         }
     }
     /*플레이어와 충돌 할 경우 플레이어 스크립트의 TakeAttack을 가져와 플레이어에게 데미지를 줍니다*/
@@ -274,23 +307,26 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
-        int i = Random.Range(0, 99);
+        if(inBox)
+        {
+            int i = Random.Range(0, 99);
 
-        if(i < 11)
-        {
-            ps.scrap += 3;
-        }
-        else if(11 <= i&& i<36)
-        {
-            ps.scrap += 2;
-        }
-        else if(36 <= i && i < 71)
-        {
-            ps.scrap += 1;
-        }
-        else
-        {
-            ps.key += 1;
+            if (i < 11)
+            {
+                ps.scrap += 3;
+            }
+            else if (11 <= i && i < 36)
+            {
+                ps.scrap += 2;
+            }
+            else if (36 <= i && i < 71)
+            {
+                ps.scrap += 1;
+            }
+            else
+            {
+                ps.key += 1;
+            }
         }
     }
 }
