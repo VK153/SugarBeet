@@ -16,14 +16,21 @@ public class ActionController : MonoBehaviour
     public bool eat = false;
     public bool getItem = false;
 
+    public float stopTime = 0;
+    public bool stTime = false;
+
 
     Player pl;
+    Holster hl;
+    GameManager gm;
 
     private void Start()
     {
         theInventory = GameObject.Find("InventoryUI").GetComponent<ItemInventory>();
         slots = theInventory.slots;
         pl = GetComponent<Player>();
+        hl = GetComponentInChildren<Holster>();
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -57,6 +64,15 @@ public class ActionController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.F))
         {
             eat = false;
+        }
+        if(stTime == true)
+        {
+            stopTime -= Time.deltaTime;
+            if(stopTime <= 0)
+            {
+                stTime = false;
+                gm.pause = false;
+            }
         }
     }
     public void UseItem()
@@ -95,6 +111,21 @@ public class ActionController : MonoBehaviour
                     pl.isAvoid = true;
                     pl.gameObject.GetComponentInChildren<WeaponFire>().canSoot = true;
                     slots[1].SetSlotCount(-1);
+                }
+                else if(slots[1].item.itemName == ("InvisiblePotion"))
+                {
+                    HasActiveItem = true;
+                    hl.invisibleTime = 4;
+                    slots[1].SetColor(0.3f);
+                }
+                else if(slots[1].item.itemName == ("TimeStop"))
+                {
+                    HasActiveItem = false;
+                    slots[1].SetSlotCount(-1);
+                    gm.pause = true;
+                    stopTime = 0.05f;
+                    stTime = true;
+                    Debug.Log("sdfaf");
                 }
             }
         }

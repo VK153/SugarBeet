@@ -42,6 +42,14 @@ public class GameManager : MonoBehaviour
             pauseMenu.gameObject.SetActive(false);
             pause = false;
         }
+        if (pause == true)
+        {
+            Time.timeScale = 0.01f;
+        }
+        else if (pause == false)
+        {
+            Time.timeScale = 1;
+        }
     }
 
     //public void GameStart()
