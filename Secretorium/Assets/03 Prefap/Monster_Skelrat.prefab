@@ -389,6 +389,9 @@ MonoBehaviour:
   isJump: 0
   goDown: 0
   isLow: 0
+  lifeTime: 0
+  setLifeTime: 15
+  inBox: 0
 --- !u!114 &1976367369
 MonoBehaviour:
   m_ObjectHideFlags: 0

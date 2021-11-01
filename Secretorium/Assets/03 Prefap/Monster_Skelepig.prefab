@@ -527,7 +527,7 @@ GameObject:
   - component: {fileID: 9160551465016189880}
   m_Layer: 11
   m_Name: Monster_Skelepig
-  m_TagString: Untagged
+  m_TagString: GunFollow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -689,6 +689,7 @@ MonoBehaviour:
   dmg: 50
   hp: 20
   exp: 2
+  maxHp: 0
   hpBar: {fileID: 9160551464118713570}
   canvas: {fileID: 0}
   hudDamageText: {fileID: 2056183388620388783, guid: 24120866d7fd5c542b89f4e191acf6e1,
@@ -706,6 +707,9 @@ MonoBehaviour:
   isJump: 0
   goDown: 0
   isLow: 0
+  lifeTime: 0
+  setLifeTime: 15
+  inBox: 0
 --- !u!1 &9160551465382184176
 GameObject:
   m_ObjectHideFlags: 0
