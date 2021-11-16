@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
     }
     public void ReStart() //재시작
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
     }
 
