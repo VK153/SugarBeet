@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 475095562359483039}
   - component: {fileID: 475095562359483038}
   - component: {fileID: 475095562359483025}
-  m_Layer: 10
+  m_Layer: 20
   m_Name: Spawner
   m_TagString: Spawner
   m_Icon: {fileID: 0}
@@ -52,6 +52,7 @@ MonoBehaviour:
   spawnDelay: 10
   spawnTime: 0
   spawn: 0
+  sSwitch: 0
 --- !u!212 &475095562359483038
 SpriteRenderer:
   m_ObjectHideFlags: 0

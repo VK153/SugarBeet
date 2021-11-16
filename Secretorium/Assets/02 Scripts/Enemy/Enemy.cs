@@ -57,6 +57,11 @@ public class Enemy : MonoBehaviour
     public bool inBox;//플레이어 주변에 있는지 확인
 
 
+
+    public Animator eAnimator;//애니메이터
+    Rigidbody2D eRigid;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +75,10 @@ public class Enemy : MonoBehaviour
 
         player = GameObject.Find("Player");
         atk = player.GetComponent<Player>();
+
+
+        eAnimator = gameObject.GetComponent<Animator>();
+        eRigid = gameObject.GetComponent<Rigidbody2D>();
 
         lastX = GetComponent<Transform>();
         lax = lastX.position.x;
@@ -93,6 +102,17 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (eRigid.velocity.x != 0)
+        {
+            eAnimator.SetBool("Run", true);
+            eAnimator.SetBool("Idle", false);
+        }
+        else
+        {
+            eAnimator.SetBool("Run", false);
+            eAnimator.SetBool("Idle", true);
+        }
+
         hpBar.fillAmount = hp / maxHp;
         enemyTr = GetComponent<Transform>();
         enemyX = enemyTr.position.x;
@@ -115,10 +135,11 @@ public class Enemy : MonoBehaviour
         {
             lifeTime += Time.deltaTime;
         }
-        else if(lifeTime > setLifeTime) 
+        else if(lifeTime > setLifeTime)
         {
-            Destroy(this.gameObject);
+            GameManager.gm.mobCount--;
             Debug.Log("lifeTimeOut");
+            Destroy(this.gameObject);
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -228,6 +249,7 @@ public class Enemy : MonoBehaviour
         if (hp <= 0)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().Kill(exp);
+            GameManager.gm.mobCount--;
             Destroy(gameObject);
         }
     }

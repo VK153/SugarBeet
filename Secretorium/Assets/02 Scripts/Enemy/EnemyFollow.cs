@@ -17,6 +17,9 @@ public class EnemyFollow : MonoBehaviour
     public int dir;
     bool a = false, b = true,c=true,d=true;
     float nonT;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,13 +30,15 @@ public class EnemyFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(d == true)
+
+        if (d == true)
         nonT += Time.deltaTime;
         if (nonT >= 0.3f)
             d = false;
         enemyTr = GetComponentInParent<Transform>();
         enemyX = enemyTr.position.x;
         enemyY = enemyTr.position.y;
+
         //Debug.Log(lastX);
         if (a == false && b ==false)
         {

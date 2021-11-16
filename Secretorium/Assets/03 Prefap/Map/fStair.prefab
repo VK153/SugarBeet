@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 1506494819693408730}
   - component: {fileID: 1506494819693408551}
   - component: {fileID: 1506494819693408548}
-  - component: {fileID: 1506494819693408549}
-  - component: {fileID: -41994439253124401}
   m_Layer: 17
   m_Name: fStair
   m_TagString: TFloor
@@ -101,7 +99,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 1.712767, y: -0.17468417}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -112,47 +110,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 4.4169216, y: 0.65063167}
   m_EdgeRadius: 0
---- !u!61 &1506494819693408549
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506494819693408731}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.01}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 4}
-    newSize: {x: 10.24, y: 2.56}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.64}
-  m_EdgeRadius: 0
---- !u!114 &-41994439253124401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506494819693408731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 961ba86810618f546ab3eabdbd34de77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tFloorB: {fileID: 0}
 --- !u!1 &4159247782751380390
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,9 +123,10 @@ GameObject:
   - component: {fileID: 6783690098306321489}
   - component: {fileID: 5601509955239151655}
   - component: {fileID: 8002072748025544537}
+  - component: {fileID: 8669040424900785760}
   m_Layer: 17
   m_Name: StairC
-  m_TagString: Floor
+  m_TagString: TFloor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -240,6 +200,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.4169216, y: 0.65063167}
   m_EdgeRadius: 0
+--- !u!114 &8669040424900785760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4159247782751380390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 961ba86810618f546ab3eabdbd34de77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tFloorB: {fileID: 0}
 --- !u!1 &5066177944335601772
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,7 +392,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1504521336718082568
 Transform:
   m_ObjectHideFlags: 0

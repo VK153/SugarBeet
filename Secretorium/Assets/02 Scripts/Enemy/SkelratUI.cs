@@ -17,8 +17,12 @@ public class SkelratUI : MonoBehaviour
     float power = 250;
 
     float time = 0, delay = 1.5f;
+
+
+    Animator eAnimator;
     private void Start()
     {
+        eAnimator = GetComponentInParent<Animator>();
         follow = GetComponentInChildren<EnemyFollow>().gameObject;
     }
     private void Update()
@@ -65,6 +69,7 @@ public class SkelratUI : MonoBehaviour
     {
         if (time >= delay)
         {
+            eAnimator.SetTrigger("Attack");
             mid = (myX - playerX) * 0.5f;
             GameObject ball = Instantiate(fireBall);
             ball.transform.position = firePos.transform.position;

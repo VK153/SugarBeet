@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 2513161282623608893}
   - component: {fileID: 2513161282623608870}
   - component: {fileID: 1976367369}
+  - component: {fileID: -8822693708739418862}
   m_Layer: 11
   m_Name: Monster_Skelrat
   m_TagString: GunFollow
@@ -272,7 +273,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 3954575f4b785744fb6f389ec5125b73, type: 3}
+  m_Sprite: {fileID: 8297418456621219082, guid: 0ab798f562bd27f4087afc30081c772f,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -321,7 +323,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
+    oldSize: {x: 4.336, y: 1.4845458}
     newSize: {x: 5.12, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -347,7 +349,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
+    oldSize: {x: 4.336, y: 1.4845458}
     newSize: {x: 5.12, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -392,6 +394,7 @@ MonoBehaviour:
   lifeTime: 0
   setLifeTime: 15
   inBox: 0
+  eAnimator: {fileID: 0}
 --- !u!114 &1976367369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,6 +410,25 @@ MonoBehaviour:
   fireBall: {fileID: 8019256962375891643, guid: c52c5960757e1414b8b88704ab354c4c,
     type: 3}
   firePos: {fileID: 874959991}
+--- !u!95 &-8822693708739418862
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2513161282623608871}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6fd84e58c680e214cb50ec5218266f80, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2513161283264118638
 GameObject:
   m_ObjectHideFlags: 0
