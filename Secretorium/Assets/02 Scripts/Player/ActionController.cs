@@ -28,13 +28,13 @@ public class ActionController : MonoBehaviour
     {
         theInventory = GameObject.Find("InventoryUI").GetComponent<ItemInventory>();
         slots = theInventory.slots;
-        pl = GetComponent<Player>();
-        hl = GetComponentInChildren<Holster>();
+        pl = GameObject.Find("Player").GetComponent<Player>();
+        hl = GameObject.Find("Player").GetComponentInChildren<Holster>();
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Item")&& eat == true)
+        if (collision.CompareTag("Item")&& Input.GetKeyDown(KeyCode.F))
         {
             getItem = true;
                 theInventory.AcquireItem(collision.transform.GetComponent<ItemPickUp>().item);
@@ -135,14 +135,20 @@ public class ActionController : MonoBehaviour
     {
         if (_item.itemName == ("ChaserTiket") && TiketCoolTime == false)
         {
-            GetComponent<Player>().aF = 10;
-            GetComponent<Player>().aFCoolTime = 20;
+            GameObject.Find("Player").GetComponent<Player>().aF = 10;
+            GameObject.Find("Player").GetComponent<Player>().aFCoolTime = 20;
             TiketCoolTime = true;
         }
         else if (_item.itemName == ("InfectSpore") && TiketCoolTime == false)
         {
-            GetComponent<Player>().aFCoolTime = 20;
+            GameObject.Find("Player").GetComponent<Player>().aFCoolTime = 20;
+            TiketCoolTime = true;
+        }
+        else if (_item.itemName  == ("InvisiblePotion")&&TiketCoolTime == false)
+        {
+            GameObject.Find("Player").GetComponent<Player>().aFCoolTime = 10;
             TiketCoolTime = true;
         }
     }
+
 }

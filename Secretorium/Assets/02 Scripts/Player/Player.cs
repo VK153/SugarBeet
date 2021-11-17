@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public float HG = -1;
     float avoid;
     public bool isAvoid = false;
+    public bool isIn = false;
 
     public float dmg;
     float hpUp = 1.01f;
@@ -44,6 +45,9 @@ public class Player : MonoBehaviour
     public Transform hudPos;
     string miss = "Miss";
     public GameObject canvas;
+
+    public Image playerImage;
+    public Sprite plSprite;
 
 
     int level = 1;
@@ -79,6 +83,8 @@ public class Player : MonoBehaviour
         playing.minValue = startPos.transform.position.x;
         playing.maxValue = endPos.transform.position.x;
         pSound = GetComponent<AudioSource>();
+        playerImage.sprite = plSprite;
+        
         //pos = transform.position;
     }
 
@@ -341,6 +347,28 @@ public class Player : MonoBehaviour
             HG = -1;
             avoidPoint = avoid;
         }
+    }
+
+    public void InvisiblePotion()
+    {
+        if( isIn == true && aFCoolTime > 0)
+        {
+            //SetColor(0.3f);
+            aFCoolTime -= Time.deltaTime;
+            if (aFCoolTime <= 0)
+            {
+                GetComponent<ActionController>().TiketCoolTime = false;
+                aFCoolTime = 0;
+                return;
+            }
+        }
+    }
+
+    public void SetColor(float _alpha)
+    {
+        Color color = playerImage.color;
+        color.a = _alpha;
+        playerImage.color = color;
     }
 
     private void OnTriggerStay2D(Collider2D other)
