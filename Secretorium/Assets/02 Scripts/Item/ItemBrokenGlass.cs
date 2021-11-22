@@ -8,6 +8,7 @@ public class ItemBrokenGlass : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Player").gameObject;
+        Debug.Log("asdf");
     }
     //private void OnTriggerEnter2D(Collider2D collision)
     //{

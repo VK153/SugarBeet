@@ -36868,6 +36868,7 @@ MonoBehaviour:
   aFCoolTime: 0
   scrap: 0
   key: 0
+  plimage: {fileID: 0}
 --- !u!82 &1530935029
 AudioSource:
   m_ObjectHideFlags: 0
@@ -38896,6 +38897,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MonkiTanky (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846622390666380004, guid: 08592377b0ef4a14984f265e6861e4e2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846622390666380004, guid: 08592377b0ef4a14984f265e6861e4e2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08592377b0ef4a14984f265e6861e4e2, type: 3}
@@ -53602,12 +53613,12 @@ PrefabInstance:
     - target: {fileID: 7631094236188037369, guid: 04296454f004424478ad15296840eaee,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.72
+      value: 2.28
       objectReference: {fileID: 0}
     - target: {fileID: 7631094236188037369, guid: 04296454f004424478ad15296840eaee,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.55
+      value: 1.57
       objectReference: {fileID: 0}
     - target: {fileID: 7631094236188037369, guid: 04296454f004424478ad15296840eaee,
         type: 3}

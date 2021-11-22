@@ -73,6 +73,8 @@ public class Player : MonoBehaviour
 
     public int scrap;
     public int key;
+
+    public SpriteRenderer plimage;
     // Start is called before the first frame update
     void Start()
     {
@@ -83,14 +85,18 @@ public class Player : MonoBehaviour
         playing.minValue = startPos.transform.position.x;
         playing.maxValue = endPos.transform.position.x;
         pSound = GetComponent<AudioSource>();
-        playerImage.sprite = plSprite;
-        
+
+        plimage = GetComponent<SpriteRenderer>();
+        //playerImage.sprite = plSprite;
+
         //pos = transform.position;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         //Debug.Log(aFCoolTime);
         AutoFire();
         HappyG();
@@ -354,6 +360,7 @@ public class Player : MonoBehaviour
         if( isIn == true && aFCoolTime > 0)
         {
             //SetColor(0.3f);
+            //plimage.color = new Color(1, 1, 1, 0.3f);
             aFCoolTime -= Time.deltaTime;
             if (aFCoolTime <= 0)
             {

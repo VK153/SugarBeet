@@ -86,12 +86,13 @@ public class box : MonoBehaviour
         if (collision.CompareTag("PlayerHit") && Input.GetKeyDown(KeyCode.E) /*&& pl.key >= 1*/)
         {
             //pl.key -= 1;
+            Unlocked();
             Destroy(gameObject);
         }
     }
 
     private void OnDestroy()
     {
-        Unlocked();
+        
     }
 }
