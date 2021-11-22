@@ -56,6 +56,8 @@ public class Enemy : MonoBehaviour
     public float lifeTime = 0f, setLifeTime = 15f;//생명유지시간과 경과시간
     public bool inBox;//플레이어 주변에 있는지 확인
 
+    public int right = 0;
+
 
 
     public Animator eAnimator;//애니메이터
@@ -264,6 +266,7 @@ public class Enemy : MonoBehaviour
             //Erb.AddForce(new Vector2(spd, 0), ForceMode2D.Impulse);
             Erb.velocity = new Vector2(spd, Erb.velocity.y);
             enemyTr.rotation = Quaternion.Euler(0, 180, 0);
+            right = 1;
         }
         else
         {
@@ -272,6 +275,7 @@ public class Enemy : MonoBehaviour
             //Erb.AddForce(new Vector2(-spd, 0), ForceMode2D.Impulse);
             Erb.velocity = new Vector2(-spd, Erb.velocity.y);
             enemyTr.rotation = Quaternion.Euler(0, 0, 0);
+            right = 0;
             //Debug.Log(spd);
         }
     }

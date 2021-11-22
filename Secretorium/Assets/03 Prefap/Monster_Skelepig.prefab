@@ -712,6 +712,7 @@ MonoBehaviour:
   lifeTime: 0
   setLifeTime: 15
   inBox: 0
+  right: 0
   eAnimator: {fileID: 0}
 --- !u!95 &-1248670368114923812
 Animator:
@@ -744,6 +745,7 @@ GameObject:
   - component: {fileID: 9160551465382184188}
   - component: {fileID: 9160551465382184189}
   - component: {fileID: 9160551465382184190}
+  - component: {fileID: 6137358459954688915}
   m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
@@ -832,3 +834,15 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6137358459954688915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9160551465382184176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e69bea29f46e1114191539ab8f88ec58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
