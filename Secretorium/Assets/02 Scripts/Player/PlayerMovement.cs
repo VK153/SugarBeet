@@ -111,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
             jTimer += Time.deltaTime;
             if (Input.GetButtonDown("Jump") && (jumpCount < maxJump) && !Input.GetButton("Down") && jTimer > jumpCool && isGround)//점프
             {
-                print("Jump");
+                //print("Jump");
                 isJumping = true;
                 jumpCount++;
                 pBody.AddForce(new Vector2(0, jumpForce - pBody.velocity.y), ForceMode2D.Impulse);

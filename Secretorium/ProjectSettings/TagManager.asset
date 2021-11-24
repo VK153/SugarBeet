@@ -23,6 +23,7 @@ TagManager:
   - MobAble
   - SpawnHitBox
   - Spawner
+  - EJump
   layers:
   - Default
   - TransparentFX
@@ -46,7 +47,7 @@ TagManager:
   - Tox
   - SpawnHitBox
   - MobAble
-  - 
+  - EJump
   - 
   - 
   - 

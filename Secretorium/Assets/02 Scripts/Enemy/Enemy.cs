@@ -194,43 +194,44 @@ public class Enemy : MonoBehaviour
         //    //Debug.Log(canJump);
         //}
     }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("EJumpTile"))
-        {
-            //몹이 점프타일의 근처에 다가왔음을 알수있게 해주는 조건문
-            tileTr = collision.GetComponent<Transform>();
-            tileX = tileTr.position.x;
-            tileY = tileTr.position.y;
-            if (enemyX - tileX < 0)
-            {
-                totalX = (enemyX - tileX) * -1;
-            }
-            else
-            {
-                totalX = enemyX - tileX;
-            }
-            if (enemyY - tileY < 0)
-            {
-                totalY = (enemyY - tileY) * -1;
-            }
-            else
-            {
-                totalY = enemyY - tileY;
-            }
-            if (totalX < 2 && totalY < 5)
-            {
-                canJump = true;
-            }
-            else
-            {
-                canJump = false;
-            }
-            //Debug.Log(canJump);
-        }
+    //private void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    if (collision.CompareTag("EJumpTile"))
+    //    {
+    //        Debug.Log("닿음");
+    //        //몹이 점프타일의 근처에 다가왔음을 알수있게 해주는 조건문
+    //        tileTr = collision.GetComponent<Transform>();
+    //        tileX = tileTr.position.x;
+    //        tileY = tileTr.position.y;
+    //        if (enemyX - tileX < 0)
+    //        {
+    //            totalX = (enemyX - tileX) * -1;
+    //        }
+    //        else
+    //        {
+    //            totalX = enemyX - tileX;
+    //        }
+    //        if (enemyY - tileY < 0)
+    //        {
+    //            totalY = (enemyY - tileY) * -1;
+    //        }
+    //        else
+    //        {
+    //            totalY = enemyY - tileY;
+    //        }
+    //        if (totalX < 2 && totalY < 5)
+    //        {
+    //            canJump = true;
+    //        }
+    //        else
+    //        {
+    //            canJump = false;
+    //        }
+    //        //Debug.Log(canJump);
+    //    }
 
 
-    }
+    //}
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("MobAble"))
@@ -299,9 +300,13 @@ public class Enemy : MonoBehaviour
     {
         if (canJump == true && isHigh == true && isJump == false)
         {
+            Debug.Log("점프");
             Erb.AddForce(new Vector2(0, jumpForce - Erb.velocity.y), ForceMode2D.Impulse);
             //isJump = true;
         }
+        //Debug.Log("캔점프"+canJump);
+        //Debug.Log("이스하이"+isHigh);
+        //Debug.Log("이스점프"+isJump);
     }
     public void DownJump()
     {

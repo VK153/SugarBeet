@@ -94,7 +94,7 @@ public class EnemyFollow : MonoBehaviour
         {
             dir = 1;
         }
-        if(enemyY - playerY < -3)
+        if(enemyY - playerY < -2)
         {
             GetComponentInParent<Enemy>().isHigh = true;
         }

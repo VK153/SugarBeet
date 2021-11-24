@@ -12,7 +12,6 @@ public class CanvasScript : MonoBehaviour
     {
         monster = GetComponentInParent<Enemy>();
         tr = GetComponent<RectTransform>();
-        Debug.Log(tr);
         
     }
 
@@ -22,12 +21,12 @@ public class CanvasScript : MonoBehaviour
         if (monster.GetComponent<Enemy>().right == 0)
         {
             tr.rotation = Quaternion.Euler(0, 0, 0);
-            Debug.Log("왼쪽");
+            //Debug.Log("왼쪽");
         }
         else if (monster.GetComponent<Enemy>().right == 1)
         {
             tr.rotation = Quaternion.Euler(0, -0.1f, 0);
-            Debug.Log("오른쪽");
+            //Debug.Log("오른쪽");
         }
     }
 }
