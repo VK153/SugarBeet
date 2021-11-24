@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
     Transform sPoint;//스폰지점
     public float spawnDelay = 10, spawnTime = 0; //스폰 딜레이, 스폰후 경과시간
     public bool spawn, sSwitch;
+    public Sprite offSwitch,offSpawner;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +38,8 @@ public class Spawner : MonoBehaviour
         if (collision.CompareTag("PlayerHit") && Input.GetKeyDown(KeyCode.E))
         {
             sSwitch = false;
-            gameObject.GetComponent<SpriteRenderer>().color = new Color(0.5f,0.5f,0.5f,1);
+            gameObject.GetComponent<SpriteRenderer>().sprite = offSwitch;
+            spawnPoint.GetComponent<SpriteRenderer>().sprite = offSpawner;
         }
         if (collision.CompareTag("SpawnHitBox"))
         {
