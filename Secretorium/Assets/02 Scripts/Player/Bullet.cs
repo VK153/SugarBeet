@@ -53,6 +53,11 @@ public class Bullet : MonoBehaviour
             bRigi.velocity = dir * weaponFire.bSpeed;
             //Debug.Log(ox); Debug.Log(oy);
         }
+        //else if(collision.CompareTag("Wall") || collision.CompareTag("Floor") || collision.CompareTag("TFloor"))
+        //{
+        //    Debug.Log(collision);
+        //    Destroy(gameObject);
+        //}
     }
 
 

@@ -162,6 +162,10 @@ public class Player : MonoBehaviour
                 }
             }
         }
+        if (hp <= 0)
+        {
+            Die();
+        }
     }
 
     
