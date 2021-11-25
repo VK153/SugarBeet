@@ -32,7 +32,7 @@ Transform:
   - {fileID: 9120081133137787790}
   - {fileID: 5997349650393620292}
   - {fileID: 6783690098306321489}
-  - {fileID: 1504521336718082568}
+  - {fileID: 1744601053482972057}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -375,7 +375,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &5354719209784162920
+--- !u!1 &5737338480799788482
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -383,37 +383,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1504521336718082568}
-  - component: {fileID: 913672183560182149}
-  - component: {fileID: 805899385636037079}
-  m_Layer: 17
-  m_Name: StairC (1)
-  m_TagString: Floor
+  - component: {fileID: 1744601053482972057}
+  - component: {fileID: 342303942966184184}
+  - component: {fileID: 8440589464021879139}
+  - component: {fileID: 2785920096482515105}
+  m_Layer: 16
+  m_Name: StairC (2)
+  m_TagString: EnemyTFloor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1504521336718082568
+  m_IsActive: 1
+--- !u!4 &1744601053482972057
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5354719209784162920}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 5737338480799788482}
+  m_LocalRotation: {x: 0, y: 0, z: -0.3288667, w: 0.9443764}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1506494819693408730}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &913672183560182149
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -38.4}
+--- !u!60 &342303942966184184
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5354719209784162920}
+  m_GameObject: {fileID: 5737338480799788482}
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
@@ -436,20 +437,20 @@ PolygonCollider2D:
       - {x: 1.34, y: 0.73}
       - {x: -2.38, y: -2.2}
       - {x: 1.73, y: -2.2}
---- !u!61 &805899385636037079
+--- !u!61 &8440589464021879139
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5354719209784162920}
+  m_GameObject: {fileID: 5737338480799788482}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.4957199, y: -0.037022233}
+  m_Offset: {x: 1.712767, y: -0.17468417}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -460,5 +461,18 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.40092468, y: 0.92595553}
+  m_Size: {x: 4.4169216, y: 0.65063167}
   m_EdgeRadius: 0
+--- !u!114 &2785920096482515105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5737338480799788482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: effbd7f17d3a0da44bce674a7f66a909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eTFloorB: {fileID: 0}

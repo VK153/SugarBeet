@@ -343,7 +343,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 30
   m_Sprite: {fileID: 8297418456621219082, guid: 0ab798f562bd27f4087afc30081c772f,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -465,6 +465,7 @@ MonoBehaviour:
   lifeTime: 0
   setLifeTime: 15
   inBox: 0
+  KBP: 0
   right: 0
   eAnimator: {fileID: 0}
 --- !u!114 &1976367369

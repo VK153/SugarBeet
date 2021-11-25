@@ -69,7 +69,13 @@ public class PlayerMovement : MonoBehaviour
         {
             isGround = false;
             box.isTrigger = false;
-
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("TFloor"))
+        {
+            box.isTrigger = false;
         }
     }
     float slowTime = 3f, slowDelay;
@@ -101,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (Input.GetButtonDown("Jump") && Input.GetButton("Down") && isGround && downAble)//하향점프
             {
-                print("DownJump");
+                isGround = false;
                 box.isTrigger = true;
                 downAble = false;
                 pSound.clip = jumpSound;

@@ -23170,6 +23170,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: fStair (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1744601053482972057, guid: 22c6e0dded93077479456c7f0057575d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5997349650393620292, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23183,7 +23188,7 @@ PrefabInstance:
     - target: {fileID: 6783690098306321489, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7103339752084870224, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
@@ -26626,6 +26631,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: fStair (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1744601053482972057, guid: 22c6e0dded93077479456c7f0057575d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 5997349650393620292, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26639,7 +26649,7 @@ PrefabInstance:
     - target: {fileID: 6783690098306321489, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7103339752084870224, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
@@ -26652,6 +26662,16 @@ PrefabInstance:
       value: 11.43217
       objectReference: {fileID: 0}
     - target: {fileID: 8002072748025544537, guid: 22c6e0dded93077479456c7f0057575d,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 5.220391
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440589464021879139, guid: 22c6e0dded93077479456c7f0057575d,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 11.43217
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440589464021879139, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
       propertyPath: m_Offset.x
       value: 5.220391
@@ -26746,6 +26766,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: fStair (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1744601053482972057, guid: 22c6e0dded93077479456c7f0057575d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5997349650393620292, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26759,7 +26784,7 @@ PrefabInstance:
     - target: {fileID: 6783690098306321489, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7103339752084870224, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
@@ -26769,12 +26794,22 @@ PrefabInstance:
     - target: {fileID: 8002072748025544537, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
       propertyPath: m_Size.x
-      value: 7.8872046
+      value: 7.516466
       objectReference: {fileID: 0}
     - target: {fileID: 8002072748025544537, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
       propertyPath: m_Offset.x
-      value: 3.4479086
+      value: 3.2625394
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440589464021879139, guid: 22c6e0dded93077479456c7f0057575d,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 7.516466
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440589464021879139, guid: 22c6e0dded93077479456c7f0057575d,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 3.2625394
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22c6e0dded93077479456c7f0057575d, type: 3}
@@ -34659,8 +34694,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1419359671}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.75, y: 17.04, z: 0}
-  m_LocalScale: {x: 2, y: 25, z: 1}
+  m_LocalPosition: {x: 25.75, y: 17.6636, z: 0}
+  m_LocalScale: {x: 2, y: 26.948954, z: 1}
   m_Children: []
   m_Father: {fileID: 900137067}
   m_RootOrder: 14
@@ -34781,7 +34816,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: d6dba5512fc3d1f4b816431c42c7ad54, type: 3}
   m_Color: {r: 0.23529413, g: 0.23529413, b: 0.3019608, a: 1}
   m_FlipX: 0
@@ -35297,6 +35332,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: fStair (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1744601053482972057, guid: 22c6e0dded93077479456c7f0057575d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5997349650393620292, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35310,7 +35350,7 @@ PrefabInstance:
     - target: {fileID: 6783690098306321489, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7103339752084870224, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
@@ -35323,6 +35363,16 @@ PrefabInstance:
       value: 8.224806
       objectReference: {fileID: 0}
     - target: {fileID: 8002072748025544537, guid: 22c6e0dded93077479456c7f0057575d,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 3.6167054
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440589464021879139, guid: 22c6e0dded93077479456c7f0057575d,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 8.224806
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440589464021879139, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
       propertyPath: m_Offset.x
       value: 3.6167054
@@ -35861,6 +35911,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: fStair (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1744601053482972057, guid: 22c6e0dded93077479456c7f0057575d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 5997349650393620292, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35874,7 +35929,7 @@ PrefabInstance:
     - target: {fileID: 6783690098306321489, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7103339752084870224, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
@@ -35887,6 +35942,16 @@ PrefabInstance:
       value: 13.034352
       objectReference: {fileID: 0}
     - target: {fileID: 8002072748025544537, guid: 22c6e0dded93077479456c7f0057575d,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 6.021482
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440589464021879139, guid: 22c6e0dded93077479456c7f0057575d,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 13.034352
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440589464021879139, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
       propertyPath: m_Offset.x
       value: 6.021482
@@ -37112,7 +37177,7 @@ GameObject:
   - component: {fileID: 1530935028}
   - component: {fileID: 1530935029}
   - component: {fileID: 1530935030}
-  m_Layer: 9
+  m_Layer: 23
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -37178,7 +37243,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1530935021}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -107.87, y: 0, z: 0}
+  m_LocalPosition: {x: -108.37, y: 0.34, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 1017947676}
@@ -37253,7 +37318,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -3.7441998}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.7, y: 0.5}
     oldSize: {x: 4.3, y: 9.145784}
     newSize: {x: 4.2, y: 8.5}
     adaptiveTilingThreshold: 0.5
@@ -38178,6 +38243,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: fStair (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1744601053482972057, guid: 22c6e0dded93077479456c7f0057575d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5997349650393620292, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -38191,7 +38261,7 @@ PrefabInstance:
     - target: {fileID: 6783690098306321489, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7103339752084870224, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
@@ -38204,6 +38274,16 @@ PrefabInstance:
       value: 10.476167
       objectReference: {fileID: 0}
     - target: {fileID: 8002072748025544537, guid: 22c6e0dded93077479456c7f0057575d,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 4.742389
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440589464021879139, guid: 22c6e0dded93077479456c7f0057575d,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 10.476167
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440589464021879139, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
       propertyPath: m_Offset.x
       value: 4.742389
@@ -38891,6 +38971,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: fStair
       objectReference: {fileID: 0}
+    - target: {fileID: 1744601053482972057, guid: 22c6e0dded93077479456c7f0057575d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5997349650393620292, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -38904,7 +38989,7 @@ PrefabInstance:
     - target: {fileID: 6783690098306321489, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7103339752084870224, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
@@ -38917,6 +39002,16 @@ PrefabInstance:
       value: 7.8872046
       objectReference: {fileID: 0}
     - target: {fileID: 8002072748025544537, guid: 22c6e0dded93077479456c7f0057575d,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 3.4479086
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440589464021879139, guid: 22c6e0dded93077479456c7f0057575d,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 7.8872046
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440589464021879139, guid: 22c6e0dded93077479456c7f0057575d,
         type: 3}
       propertyPath: m_Offset.x
       value: 3.4479086
