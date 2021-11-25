@@ -27,65 +27,49 @@ public class box : MonoBehaviour
     {
         float a = Random.Range(0, 100);
 
-        if (a < 9)
+        if (a < 12)
         {
             Instantiate(p_kittin, tr.position, Quaternion.identity);
         }
-        else if (9 <= a && a < 19)
+        else if (12 <= a && a < 27)
         {
             Instantiate(p_bloodEye, tr.position, Quaternion.identity);
         }
-        else if (19 <= a && a < 27)
+        else if (27 <= a && a < 40)
         {
             Instantiate(p_brokenGlass, tr.position, Quaternion.identity);
         }
-        else if (27 <= a && a < 39)
+        else if (40 <= a && a < 57)
         {
             Instantiate(p_dicon, tr.position, Quaternion.identity);
         }
-        else if (39 <= a && a < 47)
+        else if (57 <= a && a < 70)
         {
             Instantiate(p_sugar, tr.position, Quaternion.identity);
         }
-        else if (47 <= a && a < 51)
+        else if (70 <= a && a < 79)
         {
             Instantiate(p_pills, tr.position, Quaternion.identity);
         }
-        else if (51 <= a && a < 52.25f)
+        else if (79 <= a && a < 86)
         {
             Instantiate(a_invisiblePotion, tr.position, Quaternion.identity);
         }
-        else if (52.25f <= a && a < 53.5f)
+        else if (86 <= a && a < 93)
         {
             Instantiate(a_timeStop, tr.position, Quaternion.identity);
         }
-        else if (53.5f <= a && a < 54.75f)
+        else if (93 <= a)
         {
             Instantiate(a_happyGrenade, tr.position, Quaternion.identity);
-        }
-        else if (54.75f <= a && a < 60.5f)
-        {
-            pl.scrap += 1;
-        }
-        else if (60.5f <= a && a < 75.5f)
-        {
-            pl.scrap += 2;
-        }
-        else if (75.5f <= a && a < 97.5f)
-        {
-            pl.scrap += 3;
-        }
-        else if (97.5f <= a)
-        {
-            pl.scrap += 5;
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("PlayerHit") && Input.GetKeyDown(KeyCode.E) /*&& pl.key >= 1*/)
+        if (collision.CompareTag("PlayerHit") && Input.GetKeyDown(KeyCode.E) && pl.scrap >= 5)
         {
-            //pl.key -= 1;
+            pl.scrap -= 5;
             Unlocked();
             Destroy(gameObject);
         }

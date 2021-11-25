@@ -102,7 +102,7 @@ public class Player : MonoBehaviour
         HappyG();
 
         StatText();
-        scrapText.text = "스크랩 : " + scrap + "\n열쇠 : " + key;
+        scrapText.text = "스크랩 : " + scrap;
 
         playing.value = player.transform.position.x;
 

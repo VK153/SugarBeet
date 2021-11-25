@@ -340,6 +340,7 @@ public class Enemy : MonoBehaviour
     {
         if(inBox)
         {
+            Debug.Log("11");
             int i = Random.Range(0, 99);
 
             if (i < 11)
@@ -350,13 +351,9 @@ public class Enemy : MonoBehaviour
             {
                 ps.scrap += 2;
             }
-            else if (36 <= i && i < 71)
-            {
-                ps.scrap += 1;
-            }
             else
             {
-                ps.key += 1;
+                ps.scrap += 1;
             }
         }
     }
