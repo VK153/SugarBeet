@@ -16,15 +16,11 @@ public class GameManager : MonoBehaviour
     public GameObject startUI, overUI, pauseMenu;
     public bool pause = false;
 
-    public int mobCount = 0, mobMaxCount = 0;//몹의 수,최대 몹의수
-
-    // Start is called before the first frame update
+    public int mobCount = 0, mobMaxCount = 0, spawnerCount = 0;//몹의 수,최대 몹의수,스포너의 수
     void Start()
     {
         gm = this;
-        //startUI = GameObject.Find("GameStartUI").gameObject;
         overUI = GameObject.Find("GameOverUI").gameObject;
-        //Time.timeScale = 0;
     }
 
     // Update is called once per frame
@@ -51,14 +47,6 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1;
         }
     }
-
-    //public void GameStart()
-    //{
-    //    isGameStart = true;
-    //    startUI.gameObject.SetActive(false);
-    //    Time.timeScale = 1;
-    //}
-
     public void GameOver() //사망시 화면
     {
         isGameOver = true;

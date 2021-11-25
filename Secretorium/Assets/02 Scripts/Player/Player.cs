@@ -309,7 +309,8 @@ public class Player : MonoBehaviour
         upCri = GetComponentInChildren<WeaponFire>().upCri;
         critical = GetComponentInChildren<WeaponFire>().critical;
         statText.text = "데미지 : " + dmg + "\n회피율 : " + avoidPoint + "\n치명타피해량 : " + upCri + "\n치명타적중률 : "
-            + critical + "\n이동속도 : " + GetComponent<PlayerMovement>().speed + "\n회복력 : " + selfHeal;
+            + critical + "\n이동속도 : " + GetComponent<PlayerMovement>().speed + "\n회복력 : " + selfHeal 
+            + "\n활성화 된 스포너 : " +GameManager.gm.spawnerCount + "\n생성된 몬스터의 수 : " + GameManager.gm.mobCount;
     }
 
     public void AutoFire()

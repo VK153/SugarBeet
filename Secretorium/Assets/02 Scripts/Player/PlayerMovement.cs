@@ -19,9 +19,8 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 50f;
 
     public int maxJump = 1, jumpCount = 0;
-    public bool isJumping = false, isGround = false, isWall = false, downAble = false,fSound = true;
+    public bool isJumping = false, isGround = false, downAble = false,fSound = true;
 
-    // Start is called before the first frame update
     void Start()
     {
         pPosition = GetComponent<Transform>();
@@ -47,25 +46,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.collider.CompareTag("Floor"))
         {
-            //Debug.Log("Floor");
             isGround = true;
             downAble = false;            
         }
         else if (collision.collider.CompareTag("TFloor"))
         {
-
-            //Debug.Log("tFloor");
             isGround = true;
             downAble = true;
         }
-        else
+        if (h != 0 && pBody.velocity.x == 0)
         {
-            pBody.velocity = new Vector2(0f, -10);
-        }
-        if (collision.collider.CompareTag("Wall"))
-        {
-            isWall = true;
-            pBody.velocity = new Vector2(-h * speed, 0f);
+            pBody.velocity = new Vector2(-h, -5);
+            isGround = false;
         }
 
     }
@@ -73,22 +65,11 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
 
-        if (collision.collider.CompareTag("Floor"))
+        if (collision.collider.CompareTag("Floor")|| collision.collider.CompareTag("TFloor"))
         {
             isGround = false;
             box.isTrigger = false;
 
-        }
-        if (collision.collider.CompareTag("Wall"))
-        {
-            isWall = false;
-        }
-    }
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("TFloor"))
-        {
-            box.isTrigger = false;
         }
     }
     float slowTime = 3f, slowDelay;
@@ -111,7 +92,6 @@ public class PlayerMovement : MonoBehaviour
             jTimer += Time.deltaTime;
             if (Input.GetButtonDown("Jump") && (jumpCount < maxJump) && !Input.GetButton("Down") && jTimer > jumpCool && isGround)//점프
             {
-                //print("Jump");
                 isJumping = true;
                 jumpCount++;
                 pBody.AddForce(new Vector2(0, jumpForce - pBody.velocity.y), ForceMode2D.Impulse);
@@ -141,17 +121,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 pAnimation.SetBool("Run", false);
             }
-            //if (!isGround && !trigger)
-            //{
-            //    box.isTrigger = false;
-            //    Debug.Log("X FJump");
-            //}
         }
 
     }
     void FixedUpdate()
     {
-        if(pBody.velocity.y < -5)
+        if(pBody.velocity.y < -4)
         {
             fSound = true;
         }
@@ -162,10 +137,6 @@ public class PlayerMovement : MonoBehaviour
             h = Input.GetAxis("Horizontal");
             y = Input.GetAxis("Vertical");
             pBody.velocity = new Vector2(h * speed, pBody.velocity.y);
-            //if (!isJumping && isGround && pBody.velocity.y > 0)
-            //{
-            //    pBody.velocity = new Vector2(0f, -12f);
-            //}
         }
     }
 

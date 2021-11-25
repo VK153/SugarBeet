@@ -54,7 +54,7 @@ public class Enemy : MonoBehaviour
 
 
     public float lifeTime = 0f, setLifeTime = 15f;//생명유지시간과 경과시간
-    public bool inBox;//플레이어 주변에 있는지 확인
+    public bool inBox, KBP = false;//플레이어 주변에 있는지 확인,플레이어가 죽였는지 (거짓이 기본)
 
     public int right = 0;
 
@@ -139,7 +139,6 @@ public class Enemy : MonoBehaviour
         }
         else if(lifeTime > setLifeTime)
         {
-            GameManager.gm.mobCount--;
             Debug.Log("lifeTimeOut");
             Destroy(this.gameObject);
         }
@@ -232,6 +231,13 @@ public class Enemy : MonoBehaviour
 
 
     //}
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("MobAble"))
+        {
+            inBox = true;
+        }
+    }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("MobAble"))
@@ -252,7 +258,7 @@ public class Enemy : MonoBehaviour
         if (hp <= 0)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().Kill(exp);
-            GameManager.gm.mobCount--;
+            KBP = true;
             Destroy(gameObject);
         }
     }
@@ -338,7 +344,8 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
-        if(inBox)
+        GameManager.gm.mobCount--;
+        if (KBP)
         {
             Debug.Log("11");
             int i = Random.Range(0, 99);
