@@ -47,7 +47,7 @@ public class SkelpigAI : MonoBehaviour
         }
         else
         {
-            GetComponentInParent<Enemy>().spd = 1f;
+            GetComponentInParent<Enemy>().spd = 1.8f;
             waitTime = 0;
             holdTime = 0;
         }

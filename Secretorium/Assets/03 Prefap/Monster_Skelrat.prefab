@@ -452,7 +452,7 @@ MonoBehaviour:
   hudPos: {fileID: 1842747926884298968}
   lax: 0
   playerTr: {fileID: 0}
-  spd: 1
+  spd: 2
   FInd: 0
   pat: 1
   fx: 1

@@ -11,6 +11,7 @@ public class MonkiAI : MonoBehaviour
     float enemyX, playerX;
     public bool blood = false;
     float bleedingTime = 4.1f, count;
+    float delayTime = 0.3f;
     public int bloodCount;
     private void Start()
     {
@@ -47,7 +48,14 @@ public class MonkiAI : MonoBehaviour
     {
         if (enemyX - playerX <= 1.5f)
         {
-            attackZone.SetActive(true);
+            delayTime -= Time.deltaTime;
+            if (delayTime <= 0)
+            {
+                attackZone.SetActive(true);
+                delayTime = 0.3f;
+            }
+            else
+                attackZone.SetActive(false);
         }
         else
             attackZone.SetActive(false);
