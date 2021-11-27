@@ -339,8 +339,8 @@ TextMesh:
   m_GameObject: {fileID: 7295119967101961731}
   m_Text: "<\uD589\uBCF5\uC218\uB958\uD0C4>\nType : Active Item\n\uCDA9\uB3CC\uBC94\uC704
     \uB0B4 \uBAA8\uB4E0 \uC624\uBE0C\uC81D\uD2B8 \uCCB4\uB825 10%\uD68C\uBCF5, 1\uCD08\uAC04
-    \uC790\uC2E0\uC758 \uD68C\uD53C\uC728 100%\uC99D\uAC00\n\uBD84\uD574 : E\uAFB9! 
-    \uD68D\uB4DD : F\uAFB9!"
+    \uC790\uC2E0\uC758 \uD68C\uD53C\uC728 100%\uC99D\uAC00\n\uBD84\uD574 : F\uAFB9! 
+    \uD68D\uB4DD : E\uAFB9!"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1

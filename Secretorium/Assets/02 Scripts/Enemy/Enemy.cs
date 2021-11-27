@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
     BoxCollider2D box;
 
     float downTime = 2, alfa;
-
+    
 
     public float lifeTime = 0f, setLifeTime = 15f;//생명유지시간과 경과시간
     public bool inBox, KBP = false;//플레이어 주변에 있는지 확인,플레이어가 죽였는지 (거짓이 기본)
@@ -150,7 +150,7 @@ public class Enemy : MonoBehaviour
         //{
         //    atk.TakeAttack(dmg);
         //}
-        if (other.CompareTag("Bullet") && shild == false)
+        if (other.CompareTag("Bullet") && shild == false && life !=false)
         {
             weaponFire.Dmg();
             TakeDamage(weaponFire.dmg);
@@ -256,7 +256,7 @@ public class Enemy : MonoBehaviour
         hudText.GetComponent<DamageText>().damage = (int)damage; // 데미지 전달
         //base.TakeDamage(damage);
 
-        if (hp <= 0)
+        if (hp <= 0 && life != false)
         {
             int i = Random.Range(0, 99);
 
@@ -275,7 +275,8 @@ public class Enemy : MonoBehaviour
             life = false;
             GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().Kill(exp);
             KBP = true;
-            Destroy(gameObject);
+            spd = 0;
+            Destroy(gameObject, 1f);
         }
     }
     //플레이어에게 데미지를 받을 시 호출할 함수입니다. 만약 죽을경우 플레이어의 Kill함수를 호출해 경험치를 제공합니다 임시로50의 겸치량을 넣었습니다

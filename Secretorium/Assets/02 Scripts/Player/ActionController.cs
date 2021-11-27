@@ -34,14 +34,14 @@ public class ActionController : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Item")&& Input.GetKeyDown(KeyCode.F))
+        if (collision.CompareTag("Item")&& Input.GetKeyDown(KeyCode.E))
         {
             getItem = true;
                 theInventory.AcquireItem(collision.transform.GetComponent<ItemPickUp>().item);
                 Destroy(collision.gameObject);
             return;
         }
-        else if(collision.CompareTag("Item")&& Input.GetKeyDown(KeyCode.E))
+        else if(collision.CompareTag("Item")&& Input.GetKeyDown(KeyCode.F))
         {
             getItem = false;
             if (collision.transform.GetComponent<ItemPickUp>().item.itemType == Item.ItemType.Active)
@@ -57,11 +57,11 @@ public class ActionController : MonoBehaviour
     {
         //Debug.Log(eat);
         UseItem();
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             eat = true;
         }
-        if (Input.GetKeyUp(KeyCode.F))
+        if (Input.GetKeyUp(KeyCode.E))
         {
             eat = false;
         }

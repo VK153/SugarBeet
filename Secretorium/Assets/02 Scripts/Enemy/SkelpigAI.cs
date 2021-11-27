@@ -36,7 +36,7 @@ public class SkelpigAI : MonoBehaviour
         else
             Hto = high;
 
-        if (total <= maxRange && GetComponentInParent<Enemy>().FInd == true && Hto <=3)
+        if (total <= maxRange && GetComponentInParent<Enemy>().FInd == true && Hto <=3&&GetComponentInParent<Enemy>().life !=false)
         {
             waitTime += Time.deltaTime;
             holdTime += Time.deltaTime;
@@ -50,6 +50,10 @@ public class SkelpigAI : MonoBehaviour
             GetComponentInParent<Enemy>().spd = 1.8f;
             waitTime = 0;
             holdTime = 0;
+        }
+        if( GetComponentInParent<Enemy>().life == false)
+        {
+            GetComponentInParent<Enemy>().spd = 0;
         }
     }
 

@@ -83,7 +83,7 @@ TextMesh:
   m_GameObject: {fileID: 175610655}
   m_Text: "<\uC790\uC591\uAC15\uAC15\uAC15\uAC15\uAC15\uAC15\uAC15\uAC15\uAC15\uC81C>\nType
     : Passive Item\n\uCD5C\uB300\uCCB4\uB825 +20 / \uD68C\uBCF5\uB825 +1 / \uD68C\uD53C\uC728
-    *5%\n\uBD84\uD574 : E\uAFB9!  \uD68D\uB4DD : F\uAFB9!"
+    *5%\n\uBD84\uD574 : F\uAFB9!  \uD68D\uB4DD : E\uAFB9!"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1

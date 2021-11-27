@@ -163,7 +163,7 @@ TextMesh:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880040442}
   m_Text: "<\uAE68\uC9C4\uC548\uACBD>\nType : Passive Item\n\uCE58\uBA85\uD0C0\uC801\uC911\uB960
-    +10%\n\uBD84\uD574 : E\uAFB9!  \uD68D\uB4DD : F\uAFB9!"
+    +10%\n\uBD84\uD574 : F\uAFB9!  \uD68D\uB4DD : E\uAFB9!"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1

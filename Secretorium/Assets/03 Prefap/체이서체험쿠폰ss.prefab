@@ -226,7 +226,7 @@ TextMesh:
   m_GameObject: {fileID: 1184352838}
   m_Text: "<\uCCB4\uC774\uC11C \uCCB4\uD5D8 \uCFE0\uD3F0>\nType : Active Item\n\uC0AC\uC6A9\uC2DC
     10\uCD08\uB3D9\uC548 \uC720\uB3C4\uCD1D\uC54C\uC744 \uBC1C\uC0AC\uD55C\uB2E4(\uC7AC\uC0AC\uC6A9
-    \uB300\uAE30\uC2DC\uAC04 60s)\n\uBD84\uD574 : E\uAFB9!  \uD68D\uB4DD : F\uAFB9!"
+    \uB300\uAE30\uC2DC\uAC04 60s)\n\uBD84\uD574 : F\uAFB9!  \uD68D\uB4DD : E\uAFB9!"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1

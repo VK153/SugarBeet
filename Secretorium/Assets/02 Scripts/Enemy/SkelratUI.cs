@@ -31,6 +31,10 @@ public class SkelratUI : MonoBehaviour
         myX = myTr.position.x;
         time += Time.deltaTime;
         //Debug.Log(myX - playerX);
+        if(GetComponent<Enemy>().life == false)
+        {
+            GetComponent<Enemy>().spd = 0;
+        }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -57,17 +61,17 @@ public class SkelratUI : MonoBehaviour
 
     public void Stop()
     {
-        if (myX - playerX <= 4 && myX - playerX >= -4)
+        if (myX - playerX <= 4 && myX - playerX >= -4 && GetComponent<Enemy>().life != false)
         {
             GetComponent<Enemy>().spd = 0f;
         }
         else
-            GetComponent<Enemy>().spd = 1f;
+            GetComponent<Enemy>().spd = 2f;
     }
 
     public void Fire()
     {
-        if (time >= delay)
+        if (time >= delay && GetComponent<Enemy>().life != false)
         {
             eAnimator.SetTrigger("Attack");
             mid = (myX - playerX) * 0.5f;
