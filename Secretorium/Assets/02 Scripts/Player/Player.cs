@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public float hp;
     public float avoidPoint = 30;
     public float HG = -1;
-    float avoid;
+    public float avoid = 5;
     public bool isAvoid = false;
     public bool isIn = false;
 

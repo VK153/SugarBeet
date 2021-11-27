@@ -37363,6 +37363,7 @@ MonoBehaviour:
   hp: 0
   avoidPoint: 30
   HG: 0
+  avoid: 5
   isAvoid: 0
   isIn: 0
   dmg: 10

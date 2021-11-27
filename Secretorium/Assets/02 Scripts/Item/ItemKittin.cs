@@ -22,7 +22,7 @@ public class ItemKittin : MonoBehaviour
     private void OnDestroy()
     {
         if (pl.GetComponent<ActionController>().getItem == true)
-            pl.GetComponent<Player>().avoidPoint += pl.GetComponent<Player>().avoidPoint * 0.2f;
+            pl.GetComponent<Player>().avoid += pl.GetComponent<Player>().avoid * 0.2f;
         else if (pl.GetComponent<ActionController>().getItem == false)
             pl.GetComponent<Player>().scrap += 4;
     }

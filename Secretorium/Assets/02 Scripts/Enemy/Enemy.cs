@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     WeaponFire weaponFire;
     public Image hpBar;
     public GameObject canvas;
+    public bool life = true;
 
     GameObject player;
     Player atk;
@@ -257,6 +258,21 @@ public class Enemy : MonoBehaviour
 
         if (hp <= 0)
         {
+            int i = Random.Range(0, 99);
+
+            if (i < 11)
+            {
+                ps.scrap += 3;
+            }
+            else if (11 <= i && i < 36)
+            {
+                ps.scrap += 2;
+            }
+            else
+            {
+                ps.scrap += 1;
+            }
+            life = false;
             GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().Kill(exp);
             KBP = true;
             Destroy(gameObject);
@@ -342,26 +358,25 @@ public class Enemy : MonoBehaviour
         //Debug.Log(isLow);
     }
 
-    private void OnDestroy()
-    {
-        GameManager.gm.mobCount--;
-        if (KBP)
-        {
-            Debug.Log("11");
-            int i = Random.Range(0, 99);
+    //private void OnDestroy()
+    //{
+    //    GameManager.gm.mobCount--;
+    //    if (KBP)
+    //    {
+    //        int i = Random.Range(0, 99);
 
-            if (i < 11)
-            {
-                ps.scrap += 3;
-            }
-            else if (11 <= i && i < 36)
-            {
-                ps.scrap += 2;
-            }
-            else
-            {
-                ps.scrap += 1;
-            }
-        }
-    }
+    //        if (i < 11)
+    //        {
+    //            ps.scrap += 3;
+    //        }
+    //        else if (11 <= i && i < 36)
+    //        {
+    //            ps.scrap += 2;
+    //        }
+    //        else
+    //        {
+    //            ps.scrap += 1;
+    //        }
+    //    }
+    //}
 }

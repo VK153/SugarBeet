@@ -17,6 +17,7 @@ public class EnemyFollow : MonoBehaviour
     public int dir;
     bool a = false, b = true,c=true,d=true;
     float nonT;
+    Enemy em;
 
 
 
@@ -24,55 +25,58 @@ public class EnemyFollow : MonoBehaviour
     void Start()
     {
         lastTr = enemyTr;
+        em = GetComponentInParent<Enemy>();
         //lastX = GetComponentInParent<Enemy>().lax;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (d == true)
-        nonT += Time.deltaTime;
-        if (nonT >= 0.3f)
-            d = false;
-        enemyTr = GetComponentInParent<Transform>();
-        enemyX = enemyTr.position.x;
-        enemyY = enemyTr.position.y;
-
-        //Debug.Log(lastX);
-        if (a == false && b ==false)
+        if (em.life != false)
         {
-            if (enemyX - lastX < -0.5f)
+            if (d == true)
+                nonT += Time.deltaTime;
+            if (nonT >= 0.3f)
+                d = false;
+            enemyTr = GetComponentInParent<Transform>();
+            enemyX = enemyTr.position.x;
+            enemyY = enemyTr.position.y;
+
+            //Debug.Log(lastX);
+            if (a == false && b == false)
             {
-                dir = -1;
-                //오른쪽으로 이동
+                if (enemyX - lastX < -0.5f)
+                {
+                    dir = -1;
+                    //오른쪽으로 이동
+                }
+                else if (enemyX - lastX > 0.5f)
+                {
+                    dir = 1;
+                    //왼쪽으로 이동
+                }
+                else
+                {
+                    dir = -1;
+                    b = true;
+                }
             }
-            else if (enemyX - lastX > 0.5f)
+            if (b == true && d == false)
             {
-                dir = 1;
-                //왼쪽으로 이동
+                if (c == true)
+                {
+                    dir = -1;
+                    c = false;
+                }
+                patrol();
+                GetComponentInParent<Enemy>().GoHome();
             }
-            else
-            {
-                dir = -1;
-                b = true;
-            }
+            //Debug.Log(dir);
         }
-        if(b == true&& d==false)
-        {
-            if (c == true)
-            {
-                dir = -1;
-                c = false;
-            }
-            patrol();
-            GetComponentInParent<Enemy>().GoHome();
-        }
-        //Debug.Log(dir);
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("PlayerHit"))
+        if (collision.CompareTag("PlayerHit") && em.life != false)
         {
             playerTr = collision.GetComponent<Transform>();
             GetComponentInParent<Enemy>().playerTr = playerTr;
@@ -130,7 +134,7 @@ public class EnemyFollow : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("PlayerHit"))
+        if (collision.CompareTag("PlayerHit") && em.life != false)
         {
             GetComponentInParent<Enemy>().FInd = false;
             dir = 0;

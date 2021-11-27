@@ -29,7 +29,7 @@ public class ItemPills : MonoBehaviour
     {
         if (player.GetComponent<ActionController>().getItem == true)
         {
-            player.GetComponent<Player>().avoidPoint *= 1.05f;
+            player.GetComponent<Player>().avoid *= 1.05f;
             if (player.GetComponent<Player>().sugarBeat == false)
             {
                 player.GetComponent<Player>().maxHp += 20;
