@@ -24,11 +24,4 @@ public class TFloor : MonoBehaviour
         }
 
     }
-    //private void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    if (collision.collider.CompareTag("Player"))
-    //    {
-    //        tFloorB.isTrigger = false;
-    //    }
-    //}
 }

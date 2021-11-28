@@ -8,24 +8,31 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager gm;
 
-    public bool isGameStart = true;
-    public bool isGameOver = false;
-    private string NowScene;
+    public bool isGameStart = true, isGameOver = false ,isGameClear = false;
+    public float time = 0f;
 
 
-    public GameObject startUI, overUI, pauseMenu;
+    public GameObject startUI, overUI, pauseMenu, listenerO, clearText;
+    Text ClearText;
+    AudioListener listener;
     public bool pause = false;
 
     public int mobCount = 0, mobMaxCount = 0, spawnerCount = 0;//몹의 수,최대 몹의수,스포너의 수
     void Start()
     {
+        listener = listenerO.GetComponent<AudioListener>();
         gm = this;
         overUI = GameObject.Find("GameOverUI").gameObject;
+        ClearText = clearText.GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update() 
     {
+        if(!isGameClear)
+        time += Time.deltaTime;
+        else
+        time -= Time.deltaTime;
         if(!pause && Input.GetButtonDown("Cancel"))//메뉴 열기 및 정지
         {
             Time.timeScale = 0;
@@ -38,13 +45,25 @@ public class GameManager : MonoBehaviour
             pauseMenu.gameObject.SetActive(false);
             pause = false;
         }
-        if (pause == true)
+        if (pause)
         {
-            Time.timeScale = 0.01f;
+            Time.timeScale = 0f;
         }
-        else if (pause == false)
+        else if (!pause)
         {
             Time.timeScale = 1;
+        }
+        if(time > 10 && spawnerCount <= 0)
+        {
+            isGameClear = true;
+            PlayerPrefs.SetInt("Story", 1);
+            time = 6f;
+            clearText.SetActive(true);
+        }
+        ClearText.text = "StageClear!!\nMove To Main\n\n" + (int)time;
+        if(time <= 0 && isGameClear)
+        {
+            SceneManager.LoadScene("000_MainMenu");
         }
     }
     public void GameOver() //사망시 화면
@@ -54,7 +73,6 @@ public class GameManager : MonoBehaviour
         {
             overUI.transform.GetChild(i).gameObject.SetActive(true);
         }
-        Time.timeScale = 0;
     }
     public void Resume() //계속하기
     {

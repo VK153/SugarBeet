@@ -276,6 +276,7 @@ public class Enemy : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().Kill(exp);
             KBP = true;
             spd = 0;
+            GameManager.gm.mobCount--;
             Destroy(gameObject, 1f);
         }
     }

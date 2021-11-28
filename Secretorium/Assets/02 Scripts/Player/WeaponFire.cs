@@ -9,7 +9,7 @@ public class WeaponFire : MonoBehaviour
     public GameObject shootPos;
     public bool canSoot = false;
     public float bSpeed = 10;
-
+    Player player;
 
     private float time = 0;
     public float delay = 0.2f;
@@ -34,6 +34,7 @@ public class WeaponFire : MonoBehaviour
     void Start()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        player = GetComponentInParent<Player>();
         wSound = GetComponent<AudioSource>();
         holster = GameObject.Find("Holster");
     }
@@ -41,7 +42,7 @@ public class WeaponFire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!gm.pause)
+        if (!gm.pause && player.isGameover == false)
         {
             if (time <= delay)
             {

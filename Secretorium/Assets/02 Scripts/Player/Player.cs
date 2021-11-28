@@ -5,13 +5,17 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public static Player PY;
+    public GameObject playerC;
     public float maxHp=100;
     public float hp;
     public float avoidPoint = 30;
     public float HG = -1;
+    public bool isGameover = false;
     public float avoid = 5;
     public bool isAvoid = false;
     public bool isIn = false;
+    
 
     public float dmg;
     float hpUp = 1.01f;
@@ -75,7 +79,6 @@ public class Player : MonoBehaviour
     public int key;
 
     public SpriteRenderer plimage;
-    // Start is called before the first frame update
     void Start()
     {
         startPos = GameObject.Find("StartPos");
@@ -87,84 +90,79 @@ public class Player : MonoBehaviour
         pSound = GetComponent<AudioSource>();
 
         plimage = GetComponent<SpriteRenderer>();
-        //playerImage.sprite = plSprite;
-
-        //pos = transform.position;
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-        //Debug.Log(aFCoolTime);
-        AutoFire();
-        HappyG();
-
-        StatText();
-        scrapText.text = "스크랩 : " + scrap;
-
-        playing.value = player.transform.position.x;
-
-        hpBar.fillAmount = hp / maxHp;
-        hpText.text = ((int)hp + " / " + (int)maxHp);
-        expBar.fillAmount = exp / maxExp;
-        expText.text = ((int)exp + " / " + (int)maxExp);
-        levelText.text = ("LV. " + level);
-
-
-
-        if (exp >= maxExp)
+        if (!isGameover)
         {
-            LevelUp();
-            //Debug.Log("레벨업!");
-            //레벨업이 정상작동하는지 확인하기 위한 용도입니다(정상작동중)
-        }
-        if(sugarBeat == true)
-        {
-            shieldHeal -= Time.deltaTime;
-            if(shieldHeal <= 0)
+            AutoFire();
+            HappyG();
+
+            StatText();
+            scrapText.text = "스크랩 : " + scrap;
+
+            playing.value = player.transform.position.x;
+
+            hpBar.fillAmount = hp / maxHp;
+            hpText.text = ((int)hp + " / " + (int)maxHp);
+            expBar.fillAmount = exp / maxExp;
+            expText.text = ((int)exp + " / " + (int)maxExp);
+            levelText.text = ("LV. " + level);
+
+
+
+            if (exp >= maxExp)
             {
-                shield += 10;
-                shieldHeal = 1;
+                LevelUp();
             }
-            if(shield >= 20000)
+            if (sugarBeat == true)
             {
-                shield = 20000;
-            }
-        }
-        healTime -= Time.deltaTime;
-        if(healTime <= 0)
-        {
-            hp += selfHeal;
-            healTime = 2;
-        }
-        if (hp > maxHp)
-        {
-            hp = maxHp;
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            if (statOn == false)
-            {
-                for (int i = 0; i < 2; i++)
+                shieldHeal -= Time.deltaTime;
+                if (shieldHeal <= 0)
                 {
-                    stat.transform.GetChild(i).gameObject.SetActive(true);
-                    statOn = true;
+                    shield += 10;
+                    shieldHeal = 1;
+                }
+                if (shield >= 20000)
+                {
+                    shield = 20000;
                 }
             }
-            else
+            healTime -= Time.deltaTime;
+            if (healTime <= 0)
             {
-                for (int i = 0; i < 2; i++)
+                hp += selfHeal;
+                healTime = 2;
+            }
+            if (hp > maxHp)
+            {
+                hp = maxHp;
+            }
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                if (statOn == false)
                 {
-                    stat.transform.GetChild(i).gameObject.SetActive(false);
-                    statOn = false;
+                    for (int i = 0; i < 2; i++)
+                    {
+                        stat.transform.GetChild(i).gameObject.SetActive(true);
+                        statOn = true;
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < 2; i++)
+                    {
+                        stat.transform.GetChild(i).gameObject.SetActive(false);
+                        statOn = false;
+                    }
                 }
             }
-        }
-        if (hp <= 0)
-        {
-            Die();
+            if (hp <= 0)
+            {
+                Die();
+            }
         }
     }
 
@@ -172,68 +170,71 @@ public class Player : MonoBehaviour
 
     public void TakeAttack(float dmg)
     {
-        int a = Random.Range(0, 100);
-        if (shield > 0)
+        if (!isGameover)
         {
-            if (a > avoidPoint)
+            int a = Random.Range(0, 100);
+            if (shield > 0)
             {
-                shield -= dmg;
+                if (a > avoidPoint)
+                {
+                    shield -= dmg;
 
-                pSound.clip = hitSound;
-                pSound.Play();
+                    pSound.clip = hitSound;
+                    pSound.Play();
 
-                GameObject hudText = Instantiate(hudDamageText, canvas.transform); // 생성할 텍스트 오브젝트
-                hudText.transform.position = hudPos.position; // 표시될 위치
-                hudText.GetComponent<DamageText>().damage = (int)dmg; // 데미지 전달
-                                                                      //Debug.Log("아야!");
-                                                                      //Enemy와 충돌 할 경우 Enemy로부터 dmg값을 받아와 데미지받는것을 처리하는곳입니다
-                                                                      //정상작동 확인을 위해 avoidPoint값을 30으로 주었습니다 (30%)
+                    GameObject hudText = Instantiate(hudDamageText, canvas.transform); // 생성할 텍스트 오브젝트
+                    hudText.transform.position = hudPos.position; // 표시될 위치
+                    hudText.GetComponent<DamageText>().damage = (int)dmg; // 데미지 전달
+                                                                          //Debug.Log("아야!");
+                                                                          //Enemy와 충돌 할 경우 Enemy로부터 dmg값을 받아와 데미지받는것을 처리하는곳입니다
+                                                                          //정상작동 확인을 위해 avoidPoint값을 30으로 주었습니다 (30%)
+                }
+                else
+                {
+
+                    pSound.clip = avSound;
+                    pSound.Play();
+
+                    GameObject hudText = Instantiate(hudDamageText, canvas.transform); // 생성할 텍스트 오브젝트
+                    hudText.transform.position = hudPos.position; // 표시될 위치
+                    hudText.GetComponent<DamageText>().damage = 0; // 데미지 전달
+                                                                   //Debug.Log("히히 빚나감");
+                                                                   //충돌을 하였음에도 일정 확률로 회피 - 데미지를 받지 않습니다.
+                }
             }
             else
             {
+                if (a > avoidPoint)
+                {
+                    hp -= dmg;
 
-                pSound.clip = avSound;
-                pSound.Play();
+                    pSound.clip = hitSound;
+                    pSound.Play();
 
-                GameObject hudText = Instantiate(hudDamageText, canvas.transform); // 생성할 텍스트 오브젝트
-                hudText.transform.position = hudPos.position; // 표시될 위치
-                hudText.GetComponent<DamageText>().damage = 0; // 데미지 전달
-                                                               //Debug.Log("히히 빚나감");
-                                                               //충돌을 하였음에도 일정 확률로 회피 - 데미지를 받지 않습니다.
+                    GameObject hudText = Instantiate(hudDamageText, canvas.transform); // 생성할 텍스트 오브젝트
+                    hudText.transform.position = hudPos.position; // 표시될 위치
+                    hudText.GetComponent<DamageText>().damage = (int)dmg; // 데미지 전달
+                                                                          //Debug.Log("아야!");
+                                                                          //Enemy와 충돌 할 경우 Enemy로부터 dmg값을 받아와 데미지받는것을 처리하는곳입니다
+                                                                          //정상작동 확인을 위해 avoidPoint값을 30으로 주었습니다 (30%)
+                }
+                else
+                {
+
+                    pSound.clip = avSound;
+                    pSound.Play();
+
+                    GameObject hudText = Instantiate(hudDamageText, canvas.transform); // 생성할 텍스트 오브젝트
+                    hudText.transform.position = hudPos.position; // 표시될 위치
+                    hudText.GetComponent<DamageText>().damage = 0; // 데미지 전달
+                                                                   //Debug.Log("히히 빚나감");
+                                                                   //충돌을 하였음에도 일정 확률로 회피 - 데미지를 받지 않습니다.
+                }
             }
-        }
-        else
-        {
-            if (a > avoidPoint)
+            if (hp <= 0)
             {
-                hp -= dmg;
-
-                pSound.clip = hitSound;
-                pSound.Play();
-
-                GameObject hudText = Instantiate(hudDamageText, canvas.transform); // 생성할 텍스트 오브젝트
-                hudText.transform.position = hudPos.position; // 표시될 위치
-                hudText.GetComponent<DamageText>().damage = (int)dmg; // 데미지 전달
-                                                                      //Debug.Log("아야!");
-                                                                      //Enemy와 충돌 할 경우 Enemy로부터 dmg값을 받아와 데미지받는것을 처리하는곳입니다
-                                                                      //정상작동 확인을 위해 avoidPoint값을 30으로 주었습니다 (30%)
+                Die();
             }
-            else
-            {
-
-                pSound.clip = avSound;
-                pSound.Play();
-
-                GameObject hudText = Instantiate(hudDamageText, canvas.transform); // 생성할 텍스트 오브젝트
-                hudText.transform.position = hudPos.position; // 표시될 위치
-                hudText.GetComponent<DamageText>().damage = 0; // 데미지 전달
-                                                               //Debug.Log("히히 빚나감");
-                                                               //충돌을 하였음에도 일정 확률로 회피 - 데미지를 받지 않습니다.
-            }
-        }
-        if (hp <= 0)
-        {
-            Die();
         }
     }
     
@@ -254,14 +255,7 @@ public class Player : MonoBehaviour
         //적이 디스트로이 될 경우 호출합니다
     }
 
-    /*private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            KnouckBack(other.transform.position);
-        }
-        //적을 죽일 시 경험치함수들이 정상작동하는지 보기위해 임시로 만든 간단한 충돌트리거입니다
-    }*/
+
     public void KnouckBack(Vector2 pos,float spd)
     {
         float x = transform.position.x - pos.x;
@@ -279,9 +273,12 @@ public class Player : MonoBehaviour
     public void Die()
     {
         GameManager.gm.GameOver();
-
+        isGameover = true;
         pSound.clip = overSound;
         pSound.Play();
+        playerC.SetActive(false);
+        this.GetComponent<Player>().enabled = false;
+        this.GetComponent<PlayerMovement>().enabled = false;
     }
     IEnumerator KnouckBackZ(float dir,float spd)
     {
@@ -385,7 +382,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Tox"))//독장판 데미지
+        if (other.CompareTag("Tox")&& !isGameover)//독장판 데미지
         {
             toxTime += Time.deltaTime;
             if(toxTime > toxDelay)

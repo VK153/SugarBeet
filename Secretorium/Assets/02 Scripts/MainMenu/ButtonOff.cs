@@ -14,7 +14,7 @@ public class ButtonOff : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(MainMenu.optionOn == true) //배경을 뚫고 버튼이 눌리는 현상 방지
+        if(MainMenu.uiOn == true) //배경을 뚫고 버튼이 눌리는 현상 방지
         {
             button.interactable = false;
         }

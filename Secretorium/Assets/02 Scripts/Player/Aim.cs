@@ -7,17 +7,19 @@ public class Aim : MonoBehaviour
     Transform now;
     public float dy,dx;
     GameManager gm;
+    Player player;
     void Start()
     {
 
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        player = GameObject.Find("Player").GetComponent<Player>();
         now = GetComponent<Transform>();
     }
 
 
     void Update()
     {
-        if (Time.timeScale != 0)
+        if (Time.timeScale != 0 && player.isGameover == false)
         {
             Vector3 mPosition = Input.mousePosition;
             Vector3 oPosition = transform.position;

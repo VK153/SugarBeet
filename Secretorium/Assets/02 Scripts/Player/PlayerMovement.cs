@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D pBody;
     BoxCollider2D box;
     WeaponFire weaponFire;
+    Player player;
 
     AudioSource pSound;
     public AudioClip jumpSound, fallSound;
@@ -29,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
         weaponFire = GetComponentInParent<WeaponFire>();
         pAnimation = GetComponent<Animator>();
         pSound = GetComponent<AudioSource>();
+        player = GetComponent<Player>();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -82,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
     public bool stun = false;
     void Update()
     {
-        if (stun == false)
+        if (stun == false && player.isGameover == false)
         {
 
 
@@ -136,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
         {
             fSound = true;
         }
-        if (stun == false)
+        if (stun == false && player.isGameover == false)
         {
 
 
