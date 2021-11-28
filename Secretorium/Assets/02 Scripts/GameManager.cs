@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     Text ClearText;
     AudioListener listener;
     public bool pause = false;
+    public bool itemPause = false;
 
     public int mobCount = 0, mobMaxCount = 0, spawnerCount = 0;//몹의 수,최대 몹의수,스포너의 수
     void Start()
@@ -65,6 +66,10 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene("000_MainMenu");
         }
+        if (itemPause)
+            Time.timeScale = 0.01f;
+        else if (!itemPause)
+            Time.timeScale = 1;
     }
     public void GameOver() //사망시 화면
     {

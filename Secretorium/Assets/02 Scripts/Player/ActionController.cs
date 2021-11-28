@@ -71,7 +71,7 @@ public class ActionController : MonoBehaviour
             if(stopTime <= 0)
             {
                 stTime = false;
-                gm.pause = false;
+                gm.itemPause = false;
             }
         }
     }
@@ -122,8 +122,8 @@ public class ActionController : MonoBehaviour
                 {
                     HasActiveItem = false;
                     slots[1].SetSlotCount(-1);
-                    gm.pause = true;
-                    stopTime = 0.05f;
+                    gm.itemPause = true;
+                    stopTime = 0.1f;
                     stTime = true;
                     Debug.Log("sdfaf");
                 }
