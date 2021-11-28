@@ -141,6 +141,7 @@ public class Enemy : MonoBehaviour
         else if(lifeTime > setLifeTime)
         {
             Debug.Log("lifeTimeOut");
+            GameManager.gm.mobCount--;
             Destroy(this.gameObject);
         }
     }
