@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
+    GameObject gm;
     public float dmg = 5, hp = 10, exp = 10;
     public float maxHp;
     Player ps;
@@ -60,6 +61,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gm = GameObject.Find("GameManager");
         ps = GameObject.Find("Player").GetComponent<Player>();
         ba = GetComponentInChildren<EnemyBase>().gameObject;
         box = ba.GetComponent<BoxCollider2D>();
@@ -134,6 +136,7 @@ public class Enemy : MonoBehaviour
             GameManager.gm.mobCount--;
             Destroy(this.gameObject);
         }
+        if (gm.GetComponent<GameManager>().isGameOver) spd = 0f;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

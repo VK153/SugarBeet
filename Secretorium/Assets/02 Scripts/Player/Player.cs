@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
 
     public Slider playing;
 
-    GameObject startPos, endPos,player;
+    GameObject startPos, endPos,player,holster;
 
     public GameObject hudDamageText;
     public Transform hudPos;
@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
         playing.minValue = startPos.transform.position.x;
         playing.maxValue = endPos.transform.position.x;
         pSound = GetComponent<AudioSource>();
-
+        holster = GameObject.Find("Holster");
         plimage = GetComponent<SpriteRenderer>();
         
     }
@@ -231,7 +231,7 @@ public class Player : MonoBehaviour
                                                                    //충돌을 하였음에도 일정 확률로 회피 - 데미지를 받지 않습니다.
                 }
             }
-            if (hp <= 0)
+            if (hp <= 0 && !isGameover)
             {
                 Die();
             }
@@ -276,7 +276,9 @@ public class Player : MonoBehaviour
         isGameover = true;
         pSound.clip = overSound;
         pSound.Play();
+        this.GetComponent<Animator>().SetTrigger("Die");
         playerC.SetActive(false);
+        holster.SetActive(false);
         this.GetComponent<Player>().enabled = false;
         this.GetComponent<PlayerMovement>().enabled = false;
     }
