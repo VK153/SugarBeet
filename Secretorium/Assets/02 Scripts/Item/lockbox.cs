@@ -72,15 +72,11 @@ public class lockbox : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("PlayerHit") && Input.GetKeyDown(KeyCode.E) /*&& pl.key >= 1*/)
+        if (collision.CompareTag("PlayerHit") && Input.GetKeyDown(KeyCode.E) && pl.scrap >= 10)
         {
-            //pl.key -= 1;
+            pl.scrap -= 10;
             Unlocked();
             Destroy(gameObject);
         }
-    }
-    private void OnDestroy()
-    {
-        
     }
 }

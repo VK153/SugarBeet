@@ -9,15 +9,6 @@ public class ItemDicon : MonoBehaviour
     {
         player = GameObject.Find("Player").gameObject;
     }
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.CompareTag("PlayerHit"))
-    //    {
-    //        player = collision.GetComponentInParent<Player>().gameObject;
-    //        player.GetComponentInChildren<WeaponFire>().baseDmg *= 1.3f;
-    //        Destroy(gameObject);
-    //    }
-    //}
     private void OnDestroy()
     {
         if (player.GetComponent<ActionController>().getItem == true)

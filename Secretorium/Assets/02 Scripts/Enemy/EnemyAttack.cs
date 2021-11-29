@@ -18,7 +18,7 @@ public class EnemyAttack : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("PlayerHit") /*&& GetComponentInChildren<EnemyFollow>().atk == true*/)
+        if (collision.CompareTag("PlayerHit"))
         {
             eAnimator.SetTrigger("Attack");
             atk.KnouckBack(transform.position, spd);

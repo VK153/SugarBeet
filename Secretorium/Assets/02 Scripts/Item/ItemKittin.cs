@@ -10,14 +10,6 @@ public class ItemKittin : MonoBehaviour
     {
         pl = GameObject.Find("Player").gameObject;
     }
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.CompareTag("PlayerHit"))
-    //    {
-    //        collision.GetComponentInParent<Player>().avoidPoint += collision.GetComponentInParent<Player>().avoidPoint * 0.2f;
-    //        Destroy(gameObject);
-    //    }
-    //}
 
     private void OnDestroy()
     {

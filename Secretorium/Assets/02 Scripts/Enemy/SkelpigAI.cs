@@ -15,7 +15,6 @@ public class SkelpigAI : MonoBehaviour
 
     private void Start()
     {
-        //box = FindObjectOfType<GameObject>();
         box.SetActive(false);
     }
     private void Update()
@@ -43,7 +42,6 @@ public class SkelpigAI : MonoBehaviour
             if(holdTime <=1)
             GetComponentInParent<Enemy>().spd = 0;
             Run();
-            //Debug.Log(waitTime);
         }
         else
         {

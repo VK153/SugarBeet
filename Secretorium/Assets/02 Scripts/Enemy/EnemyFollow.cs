@@ -26,7 +26,6 @@ public class EnemyFollow : MonoBehaviour
     {
         lastTr = enemyTr;
         em = GetComponentInParent<Enemy>();
-        //lastX = GetComponentInParent<Enemy>().lax;
     }
 
     // Update is called once per frame
@@ -41,8 +40,6 @@ public class EnemyFollow : MonoBehaviour
             enemyTr = GetComponentInParent<Transform>();
             enemyX = enemyTr.position.x;
             enemyY = enemyTr.position.y;
-
-            //Debug.Log(lastX);
             if (a == false && b == false)
             {
                 if (enemyX - lastX < -0.5f)
@@ -71,7 +68,6 @@ public class EnemyFollow : MonoBehaviour
                 patrol();
                 GetComponentInParent<Enemy>().GoHome();
             }
-            //Debug.Log(dir);
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -115,22 +111,6 @@ public class EnemyFollow : MonoBehaviour
         {
             GetComponentInParent<Enemy>().isLow = false;
         }
-        //Debug.Log(collision);
-
-        //if (collision.CompareTag("EJumpTile"))
-        //{
-        //    Debug.Log("둠칫");
-        //    TileTr = collision.GetComponent<Transform>();
-        //    tileX = TileTr.position.x;
-        //    if (enemyX - tileX < 5 || enemyX - tileX > -5)
-        //    {
-        //        GetComponentInParent<Enemy>().canJump = true;
-        //    }
-        //    else
-        //    {
-        //        GetComponentInParent<Enemy>().canJump = false;
-        //    }
-        //}
     }
     private void OnTriggerExit2D(Collider2D collision)
     {

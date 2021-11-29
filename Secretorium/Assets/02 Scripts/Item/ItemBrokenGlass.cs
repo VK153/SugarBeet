@@ -10,18 +10,6 @@ public class ItemBrokenGlass : MonoBehaviour
         player = GameObject.Find("Player").gameObject;
         Debug.Log("asdf");
     }
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.CompareTag("PlayerHit"))
-    //    {
-    //        player = collision.GetComponentInParent<Player>().gameObject;
-    //        if (player.GetComponentInChildren<WeaponFire>().critical < 100)
-    //        {
-    //            player.GetComponentInChildren<WeaponFire>().critical += 10;
-    //        }
-    //        Destroy(gameObject);
-    //    }
-    //}
     private void OnDestroy()
     {
         if (player.GetComponent<ActionController>().getItem == true)

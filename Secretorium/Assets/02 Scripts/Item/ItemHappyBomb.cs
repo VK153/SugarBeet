@@ -35,15 +35,4 @@ public class ItemHappyBomb : MonoBehaviour
     {
         hb.SetActive(true);
     }
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.CompareTag("PlayerHit"))
-    //    {
-    //        collision.GetComponent<Player>().hp += collision.GetComponent<Player>().maxHp * 0.1f;
-    //    }
-    //    else if (collision.CompareTag("GunFollow"))
-    //    {
-    //        collision.GetComponent<Enemy>().hp += collision.GetComponent<Enemy>().maxHp * 0.1f;
-    //    }
-    //}
 }

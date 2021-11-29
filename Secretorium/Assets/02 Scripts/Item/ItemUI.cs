@@ -12,7 +12,6 @@ public class ItemUI : MonoBehaviour
         if (collision.CompareTag("PlayerHit"))
         {
             go.SetActive(true);
-            //collision.GetComponent<ActionController>().eat = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -20,7 +19,6 @@ public class ItemUI : MonoBehaviour
         if (collision.CompareTag("PlayerHit"))
         {
             go.SetActive(false);
-            //collision.GetComponent<ActionController>().eat = false;
         }
     }
 }

@@ -40,7 +40,6 @@ public class NamedMonkiAi : MonoBehaviour
                 blood = false;
             }
         }
-        //Debug.Log(blood);
     }
 
     public void AttackZone()

@@ -16,7 +16,6 @@ public class ItemInventory : MonoBehaviour
 
     void Start()
     {
-        //go_SlotsParent = GetComponentInChildren<Slot>().gameObject;
         slots = go_SlotsParent.GetComponentsInChildren<Slot>();
     }
 
@@ -60,14 +59,6 @@ public class ItemInventory : MonoBehaviour
                 slots[1].addItem(_item, _count);
             }
         }
-        //for (int i = 2; i < slots.Length; i++)
-        //{
-        //    if (slots[i].item == null)
-        //    {
-        //        slots[i].addItem(_item, _count);
-        //        return;
-        //    }
-        //}
     }
 
 

@@ -10,14 +10,6 @@ public class ItemSugar : MonoBehaviour
     {
         pm = GameObject.Find("Player").gameObject;
     }
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.CompareTag("PlayerHit"))
-    //    {
-    //        collision.GetComponentInParent<PlayerMovement>().speed += 0.5f;
-    //        Destroy(gameObject);
-    //    }
-    //}
     private void OnDestroy()
     {
         if (pm.GetComponent<ActionController>().getItem == true)

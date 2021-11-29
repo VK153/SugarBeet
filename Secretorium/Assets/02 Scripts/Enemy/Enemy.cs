@@ -5,14 +5,6 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-
-    // Warning!!!!!!!!!!!! 이 스크립트는 플레이어 스크립트의 정상작동을 확인하는 용도의 임시 스크립트입니다!!!!  Warning!!!!!!!!!!!!
-    // Warning!!!!!!!!!!!! 이 스크립트는 플레이어 스크립트의 정상작동을 확인하는 용도의 임시 스크립트입니다!!!!  Warning!!!!!!!!!!!!
-    // Warning!!!!!!!!!!!! 이 스크립트는 플레이어 스크립트의 정상작동을 확인하는 용도의 임시 스크립트입니다!!!!  Warning!!!!!!!!!!!!
-    // Warning!!!!!!!!!!!! 이 스크립트는 플레이어 스크립트의 정상작동을 확인하는 용도의 임시 스크립트입니다!!!!  Warning!!!!!!!!!!!!
-
-
-
     public float dmg = 5, hp = 10, exp = 10;
     public float maxHp;
     Player ps;
@@ -129,10 +121,8 @@ public class Enemy : MonoBehaviour
             if(lax != enemyTr.position.x)
             GoHome();
         }
-        //Debug.Log(spd);
         Jump();
         DownJump();
-        //Debug.Log(canJump);
 
         if (!inBox && lifeTime <= setLifeTime)
         {
@@ -147,10 +137,6 @@ public class Enemy : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //if (other.CompareTag("PlayerHit") && GetComponentInChildren<EnemyFollow>().atk == true)
-        //{
-        //    atk.TakeAttack(dmg);
-        //}
         if (other.CompareTag("Bullet") && shild == false && life !=false)
         {
             weaponFire.Dmg();
@@ -163,76 +149,7 @@ public class Enemy : MonoBehaviour
             lifeTime = 0f;
             inBox = true;
         }
-        //if (other.CompareTag("EJumpTile"))
-        //{
-        //    tileTr = other.GetComponent<Transform>();
-        //    tileX = tileTr.position.x;
-        //    tileY = tileTr.position.y;
-        //    if(enemyX - tileX < 0)
-        //    {
-        //        totalX = (enemyX - tileX) * -1;
-        //    }
-        //    else
-        //    {
-        //        totalX = enemyX - tileX;
-        //    }
-        //    if(enemyY - tileY < 0)
-        //    {
-        //        totalY = (enemyY - tileY) * -1;
-        //    }
-        //    else
-        //    {
-        //        totalY = enemyY - tileY;
-        //    }
-        //    if (totalX < 5 && totalY < 5)
-        //    {
-        //        canJump = true;
-        //    }
-        //    else
-        //    {
-        //        canJump = false;
-        //    }
-        //    //Debug.Log(canJump);
-        //}
     }
-    //private void OnTriggerStay2D(Collider2D collision)
-    //{
-    //    if (collision.CompareTag("EJumpTile"))
-    //    {
-    //        Debug.Log("닿음");
-    //        //몹이 점프타일의 근처에 다가왔음을 알수있게 해주는 조건문
-    //        tileTr = collision.GetComponent<Transform>();
-    //        tileX = tileTr.position.x;
-    //        tileY = tileTr.position.y;
-    //        if (enemyX - tileX < 0)
-    //        {
-    //            totalX = (enemyX - tileX) * -1;
-    //        }
-    //        else
-    //        {
-    //            totalX = enemyX - tileX;
-    //        }
-    //        if (enemyY - tileY < 0)
-    //        {
-    //            totalY = (enemyY - tileY) * -1;
-    //        }
-    //        else
-    //        {
-    //            totalY = enemyY - tileY;
-    //        }
-    //        if (totalX < 2 && totalY < 5)
-    //        {
-    //            canJump = true;
-    //        }
-    //        else
-    //        {
-    //            canJump = false;
-    //        }
-    //        //Debug.Log(canJump);
-    //    }
-
-
-    //}
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("MobAble"))
@@ -247,7 +164,7 @@ public class Enemy : MonoBehaviour
             inBox = false;
         }
     }
-    /*플레이어와 충돌 할 경우 플레이어 스크립트의 TakeAttack을 가져와 플레이어에게 데미지를 줍니다*/
+    //플레이어와 충돌 할 경우 플레이어 스크립트의 TakeAttack을 가져와 플레이어에게 데미지를 줍니다
     public void TakeDamage(float damage)
     {
         hp -= damage;
@@ -255,7 +172,6 @@ public class Enemy : MonoBehaviour
         GameObject hudText = Instantiate(hudDamageText,canvas.transform); // 생성할 텍스트 오브젝트
         hudText.transform.position = hudPos.position; // 표시될 위치
         hudText.GetComponent<DamageText>().damage = (int)damage; // 데미지 전달
-        //base.TakeDamage(damage);
 
         if (hp <= 0 && life != false)
         {
@@ -281,15 +197,13 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject, 1f);
         }
     }
-    //플레이어에게 데미지를 받을 시 호출할 함수입니다. 만약 죽을경우 플레이어의 Kill함수를 호출해 경험치를 제공합니다 임시로50의 겸치량을 넣었습니다
+    //플레이어에게 데미지를 받을 시 호출할 함수입니다. 만약 죽을경우 플레이어의 Kill함수를 호출해 경험치를 제공합니다
     int dir = -1;
     public void Follow()
     {
         if (GetComponentInChildren<EnemyFollow>().dir <= 0)   //조건이 맞을경우 오른쪽으로 가야함
         {
             dir = GetComponentInChildren<EnemyFollow>().dir;
-            //enemyTr.Translate(Vector2.right * spd * Time.deltaTime * dir);
-            //Erb.AddForce(new Vector2(spd, 0), ForceMode2D.Impulse);
             Erb.velocity = new Vector2(spd, Erb.velocity.y);
             enemyTr.rotation = Quaternion.Euler(0, 180, 0);
             right = 1;
@@ -297,18 +211,14 @@ public class Enemy : MonoBehaviour
         else
         {
             dir = GetComponentInChildren<EnemyFollow>().dir;
-            //enemyTr.Translate(Vector2.left * spd * Time.deltaTime * dir);
-            //Erb.AddForce(new Vector2(-spd, 0), ForceMode2D.Impulse);
             Erb.velocity = new Vector2(-spd, Erb.velocity.y);
             enemyTr.rotation = Quaternion.Euler(0, 0, 0);
             right = 0;
-            //Debug.Log(spd);
         }
     }
     public void GoHome()
     {
-        //Debug.Log("집가자");
-        if (GetComponentInChildren<EnemyFollow>().dir < 0)   //조건이 맞을경우 오른쪽으로 가야함
+        if (GetComponentInChildren<EnemyFollow>().dir < 0)
         {
             dir = GetComponentInChildren<EnemyFollow>().dir;
             enemyTr.Translate(Vector2.right * spd * Time.deltaTime * dir);
@@ -327,11 +237,7 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("점프");
             Erb.AddForce(new Vector2(0, jumpForce - Erb.velocity.y), ForceMode2D.Impulse);
-            //isJump = true;
         }
-        //Debug.Log("캔점프"+canJump);
-        //Debug.Log("이스하이"+isHigh);
-        //Debug.Log("이스점프"+isJump);
     }
     public void DownJump()
     {
@@ -350,36 +256,8 @@ public class Enemy : MonoBehaviour
                 {
                     downTime = 2;
                 }
-                //Debug.Log(box.isTrigger);
             }
             
         }
-        //else if(isLow == false)
-        //{
-        //    downTime = 0;
-        //}
-        //Debug.Log(isLow);
     }
-
-    //private void OnDestroy()
-    //{
-    //    GameManager.gm.mobCount--;
-    //    if (KBP)
-    //    {
-    //        int i = Random.Range(0, 99);
-
-    //        if (i < 11)
-    //        {
-    //            ps.scrap += 3;
-    //        }
-    //        else if (11 <= i && i < 36)
-    //        {
-    //            ps.scrap += 2;
-    //        }
-    //        else
-    //        {
-    //            ps.scrap += 1;
-    //        }
-    //    }
-    //}
 }
