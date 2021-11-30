@@ -57,18 +57,24 @@ public class GameManager : MonoBehaviour
         if(time > 10 && spawnerCount <= 0)
         {
             isGameClear = true;
-            PlayerPrefs.SetInt("Story", 1);
             time = 6f;
             clearText.SetActive(true);
         }
-        ClearText.text = "StageClear!!\nMove To Main\n\n" + (int)time;
-        if(time <= 0 && isGameClear)
+
+        int clearHistory;
+        clearHistory = PlayerPrefs.GetInt("Story", 0);
+
+        if(clearHistory == 0)ClearText.text = "StageClear!!\n<b><color=red> Story2 Open </color></b>\nMove To Main\n\n" + (int)time;
+        else ClearText.text = "StageClear!!\nMove To Main\n\n" + (int)time;
+
+        if (time <= 0 && isGameClear)
         {
+            PlayerPrefs.SetInt("Story", 1);
             SceneManager.LoadScene("000_MainMenu");
         }
         if (itemPause)
             Time.timeScale = 0.01f;
-        else if (!itemPause)
+        else if (!itemPause && !pause)
             Time.timeScale = 1;
     }
     public void GameOver() //사망시 화면

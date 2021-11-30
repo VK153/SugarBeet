@@ -132,7 +132,6 @@ public class Enemy : MonoBehaviour
         }
         else if(lifeTime > setLifeTime)
         {
-            Debug.Log("lifeTimeOut");
             GameManager.gm.mobCount--;
             Destroy(this.gameObject);
         }
@@ -238,7 +237,6 @@ public class Enemy : MonoBehaviour
     {
         if (canJump == true && isHigh == true && isJump == false)
         {
-            Debug.Log("점프");
             Erb.AddForce(new Vector2(0, jumpForce - Erb.velocity.y), ForceMode2D.Impulse);
         }
     }

@@ -23,7 +23,6 @@ public class EnemyJump : MonoBehaviour
         if (collision.CompareTag("EJumpTile"))
         {
             enemy.canJump = true;
-            Debug.Log("붕붕");
         }
         else
         {

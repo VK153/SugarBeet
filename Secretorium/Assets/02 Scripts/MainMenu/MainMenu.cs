@@ -14,7 +14,6 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         Story2 = PlayerPrefs.GetInt("Story", 0);
-        Debug.Log(Story2);
     }
 
     // Update is called once per frame

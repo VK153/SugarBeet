@@ -18,7 +18,7 @@ public class ItemUI : MonoBehaviour
     {
         if (collision.CompareTag("PlayerHit"))
         {
-            go.SetActive(false);
+            go.SetActive(false);            
         }
     }
 }

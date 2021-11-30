@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    //public Transform Pos;
     private Rigidbody2D bRigi;
     WeaponFire weaponFire;
     GameObject holster;
@@ -14,7 +13,6 @@ public class Bullet : MonoBehaviour
     GameObject targetPos;
     
 
-    // Start is called before the first frame update
     void Start()
     {
         bRigi = GetComponent<Rigidbody2D>();
@@ -30,7 +28,6 @@ public class Bullet : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -47,17 +44,10 @@ public class Bullet : MonoBehaviour
             Vector3 oPos = transform.position;
             x = ox - oPos.x;
             y = oy - oPos.y;
-            //Debug.Log(oPos);
             Vector2 dir = new Vector2(x,y);
             dir = dir.normalized;
             bRigi.velocity = dir * weaponFire.bSpeed;
-            //Debug.Log(ox); Debug.Log(oy);
         }
-        //else if(collision.CompareTag("Wall") || collision.CompareTag("Floor") || collision.CompareTag("TFloor"))
-        //{
-        //    Debug.Log(collision);
-        //    Destroy(gameObject);
-        //}
     }
 
 

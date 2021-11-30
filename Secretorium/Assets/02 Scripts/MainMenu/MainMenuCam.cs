@@ -13,8 +13,6 @@ public class MainMenuCam : MonoBehaviour
         Camera = transform.GetComponent<Camera>();
         Wh = Screen.width/2;
         Hh = Screen.height/2;
-        Debug.Log(Screen.width);
-        Debug.Log(Screen.height);
     }
 
     // Update is called once per frame
