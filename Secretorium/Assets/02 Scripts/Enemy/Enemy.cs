@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    GameObject gm;
+    GameObject gameManager;
+    GameManager gm;
     public float dmg = 5, hp = 10, exp = 10;
     public float maxHp;
     Player ps;
@@ -61,7 +62,8 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gm = GameObject.Find("GameManager");
+        gameManager = GameObject.Find("GameManager");
+        gm = gameManager.GetComponent<GameManager>();
         ps = GameObject.Find("Player").GetComponent<Player>();
         ba = GetComponentInChildren<EnemyBase>().gameObject;
         box = ba.GetComponent<BoxCollider2D>();
@@ -132,10 +134,11 @@ public class Enemy : MonoBehaviour
         }
         else if(lifeTime > setLifeTime)
         {
-            GameManager.gm.mobCount--;
+            gm.mobCount--;
             Destroy(this.gameObject);
         }
-        if (gm.GetComponent<GameManager>().isGameOver) spd = 0f;
+        if (gm.isGameOver) spd = 0f;
+        if (gm.isGameClear) Destroy(this.gameObject);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -195,7 +198,8 @@ public class Enemy : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().Kill(exp);
             KBP = true;
             spd = 0;
-            GameManager.gm.mobCount--;
+            gm.mobCount--;
+            this.GetComponent<Animator>().SetTrigger("Die");
             Destroy(gameObject, 1f);
         }
     }

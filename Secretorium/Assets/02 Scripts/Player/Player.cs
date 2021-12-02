@@ -84,11 +84,11 @@ public class Player : MonoBehaviour
         startPos = GameObject.Find("StartPos");
         endPos = GameObject.Find("EndPos");
         player = GameObject.Find("Player");
+        holster = GameObject.Find("Holster");
         hp = maxHp;
         playing.minValue = startPos.transform.position.x;
         playing.maxValue = endPos.transform.position.x;
         pSound = GetComponent<AudioSource>();
-        holster = GameObject.Find("Holster");
         plimage = GetComponent<SpriteRenderer>();
         
     }

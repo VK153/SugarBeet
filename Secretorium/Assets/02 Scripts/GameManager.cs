@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager gm;
-
+    MainMenu mm;
     public bool isGameStart = true, isGameOver = false ,isGameClear = false;
     public float time = 0f;
 
@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
         gm = this;
         overUI = GameObject.Find("GameOverUI").gameObject;
         ClearText = clearText.GetComponent<Text>();
+        mm = GetComponent<MainMenu>();
+        mm.uiOn = false;
     }
 
     // Update is called once per frame
@@ -45,6 +47,7 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1;
             pauseMenu.gameObject.SetActive(false);
             pause = false;
+            mm.OptionOff();
         }
         if (pause)
         {
@@ -95,6 +98,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
+        mm.uiOn = false;
     }
 
     public void GameExit() //게임종료

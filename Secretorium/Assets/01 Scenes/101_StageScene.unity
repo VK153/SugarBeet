@@ -21049,7 +21049,7 @@ PrefabInstance:
     - target: {fileID: 7631094236188037369, guid: 04296454f004424478ad15296840eaee,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 46.86
+      value: 45.29
       objectReference: {fileID: 0}
     - target: {fileID: 7631094236188037369, guid: 04296454f004424478ad15296840eaee,
         type: 3}
@@ -23250,6 +23250,7 @@ MonoBehaviour:
   story2: {fileID: 0}
   storyButton1: {fileID: 0}
   storyButton2: {fileID: 0}
+  uiOn: 0
   Story2: 0
 --- !u!114 &946565759
 MonoBehaviour:
@@ -43860,7 +43861,7 @@ PrefabInstance:
     - target: {fileID: 7631094236188037369, guid: 04296454f004424478ad15296840eaee,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 49.55
+      value: 48.05
       objectReference: {fileID: 0}
     - target: {fileID: 7631094236188037369, guid: 04296454f004424478ad15296840eaee,
         type: 3}
@@ -50844,6 +50845,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -6.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287805521413777773, guid: d7f7e38e9e783404a923366b4761c102,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8688117413435057862, guid: d7f7e38e9e783404a923366b4761c102,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.44
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7f7e38e9e783404a923366b4761c102, type: 3}

@@ -6,15 +6,19 @@ using UnityEngine.UI;
 public class ButtonOff : MonoBehaviour
 {
     Button button;//옵션창 활성화시 메인버튼 비활성화
+    GameObject gm;
+    MainMenu mm;
     void Start()
     {
-        button = gameObject.GetComponent<Button>();
+        gm = GameObject.Find("GameManager");
+        mm = gm.GetComponent<MainMenu>();
+        button = GetComponent<Button>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(MainMenu.uiOn == true) //배경을 뚫고 버튼이 눌리는 현상 방지
+        if(mm.uiOn) //배경을 뚫고 버튼이 눌리는 현상 방지
         {
             button.interactable = false;
         }

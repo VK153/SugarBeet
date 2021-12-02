@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject Option,Story, story1, story2;
     public Button storyButton1, storyButton2;
-    public static bool uiOn;
+    public bool uiOn;
     public int Story2 = 0;
     void Start()
     {
