@@ -4642,6 +4642,7 @@ MonoBehaviour:
   story2: {fileID: 906947208}
   storyButton1: {fileID: 728417125}
   storyButton2: {fileID: 1594158863}
+  uiOn: 0
   Story2: 0
 --- !u!114 &1528915488
 MonoBehaviour:
@@ -5931,7 +5932,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1528915487}
-        m_MethodName: Gameexit
+        m_MethodName: GameExit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
