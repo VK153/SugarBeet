@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System.Collections;                   //작업자 : 김영호
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;

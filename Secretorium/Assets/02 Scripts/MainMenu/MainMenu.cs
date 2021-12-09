@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System.Collections;                   //작업자 : 김영호
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject Option,Story, story1, story2;
     public Button storyButton1, storyButton2;
-    public bool uiOn;
+    public bool uiOn;//UI뒤 버튼이 눌리는 현상 방지용
     public int Story2 = 0;
     void Start()
     {

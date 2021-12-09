@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System.Collections;                   //작업자 : 김영호
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,10 +22,6 @@ public class AudioOption : MonoBehaviour
         AudioControl(bgmV.value, "BGM");
         AudioControl(sfxV.value, "SFX");
     }
-    //public void SetVolume()
-    //{
-    //    Debug.Log("SetVolume");
-    //}
 
     public void AudioControl(float sound, string Parameter)
     {

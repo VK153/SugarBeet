@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System.Collections;                   //작업자 : 김영호, 정재엽
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,7 +30,6 @@ public class WeaponFire : MonoBehaviour
 
     public bool gDmg = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -39,7 +38,6 @@ public class WeaponFire : MonoBehaviour
         holster = GameObject.Find("Holster");
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!gm.pause && player.isGameover == false)

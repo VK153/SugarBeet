@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System.Collections;                   //작업자 : 김영호
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,6 +23,7 @@ public class Aim : MonoBehaviour
         {
             Vector3 mPosition = Input.mousePosition;
             Vector3 oPosition = transform.position;
+
 
             mPosition.z = oPosition.z - Camera.main.transform.position.z;
             

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System.Collections;                   //작업자 : 김영호
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,14 +21,12 @@ public class Elevator : MonoBehaviour
         {
             if (x == 0)
             {
-                //Debug.Log("E0");
                 
                 x = 1;
                 eTime = 0f;
             }
             else if (x == 1)
             {
-                //Debug.Log("E1");
                 x = 0;
                 eTime = 0f;
             }

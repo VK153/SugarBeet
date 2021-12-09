@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System.Collections;                   //작업자 : 김영호
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -13,7 +13,6 @@ public class Spawner : MonoBehaviour
     GameManager gm;
     AudioSource switchSound;
 
-    // Start is called before the first frame update
     void Start()
     {
         spawn = false;
